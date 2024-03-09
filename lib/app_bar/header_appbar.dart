@@ -52,10 +52,10 @@ class HeaderAppBar extends StatelessWidget {
             Row(
               children: [
                 HeaderTextButton(text: 'Home'),
+                HeaderTextButton(text: 'Contattaci'),
                 HeaderTextButton(text: 'Chi siamo'),
                 HeaderTextButton(text: 'Associati'),
                 HeaderTextButton(text: 'Attività'),
-                HeaderTextButton(text: 'Contattaci'),
               ],
             )
           ],
