@@ -11,12 +11,16 @@ class ThemeUtils {
         fontSize: 18,
         fontWeight: FontWeight.bold,
       );
+  static TextStyle get content => const TextStyle(
+        fontSize: 20,
+        color: Colors.black87,
+      );
   static TextStyle get homeContentTitle => TextStyle(
         fontSize: 48,
         color: theme.colorScheme.primary,
         fontWeight: FontWeight.bold,
       );
-  static TextStyle get homeContentSubtitle => TextStyle(
+  static TextStyle get homeContentSubtitle => const TextStyle(
         fontSize: 22,
         color: Colors.black,
         fontWeight: FontWeight.bold,
@@ -25,6 +29,7 @@ class ThemeUtils {
         fontSize: 18,
       );
   static ThemeData get theme => ThemeData(
+        useMaterial3: true,
         fontFamily: GoogleFonts.anekLatin().fontFamily,
         colorScheme: const ColorScheme.light(
           primary: Color(0xFF053D84),

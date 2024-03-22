@@ -48,6 +48,9 @@ class HomeContent extends StatelessWidget {
             ),
           ],
         ),
+        // SizedBox(
+        //   height: 40,
+        // ),
         Container(
           color: Theme.of(context).primaryColor,
           height: 400,
