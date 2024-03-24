@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:medico_lavoro/app_bar/header_appbar.dart';
+import 'package:medico_lavoro/page_content/contact_us/contact_us.dart';
 
 import 'app_bar/logo.dart';
 import 'app_bar/title.dart' as title;
