@@ -3,6 +3,7 @@ import 'package:medico_lavoro/page_content/contact_us/contact_us.dart';
 import 'package:medico_lavoro/page_content/contact_us/contact_us_form.dart';
 import 'package:medico_lavoro/page_content/contact_us/contact_us_info.dart';
 import 'package:medico_lavoro/page_content/home/home_content.dart';
+import 'package:medico_lavoro/page_content/associates/associates.dart';
 import 'package:medico_lavoro/page_content/who_we_are/who_we_are.dart';
 
 class PageContent extends StatelessWidget {
@@ -14,6 +15,7 @@ class PageContent extends StatelessWidget {
       children: [
         HomeContent(),
         WhoWeAre(),
+        Associates(),
         ContactUs(),
       ],
     );

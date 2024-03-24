@@ -14,13 +14,16 @@ class Logo extends StatelessWidget {
         ),
         SizedBox(width: 10), //SizedBox(
         Column(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
               'Studio',
               style: ThemeUtils.logo,
             ),
             Text(
-              'De Stefani',
+              'Toscanetti',
               style: ThemeUtils.logo,
             ),
           ],

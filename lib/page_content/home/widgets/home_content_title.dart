@@ -14,7 +14,7 @@ class HomeContentTitle extends StatelessWidget {
           style: ThemeUtils.homeContentTitle,
         ),
         Text(
-          'De Stefani',
+          'Toscanetti',
           style: ThemeUtils.homeContentTitle.copyWith(fontSize: 60),
         ),
       ],
