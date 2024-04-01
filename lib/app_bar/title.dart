@@ -8,7 +8,7 @@ class Title extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      'Coglionazzo del lavoro',
+      'Medicina del lavoro',
       style: ThemeUtils.title,
     );
   }

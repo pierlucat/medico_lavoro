@@ -6,9 +6,17 @@ class HomeContentSubtitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      "Dove c'è il malaffare, ci siamo noi!",
-      style: ThemeUtils.homeContentSubtitle,
+    return Column(
+      children: [
+        Text(
+          "Scopri il nostro studio di medicina del lavoro ed",
+          style: ThemeUtils.homeContentSubtitle,
+        ),
+        Text(
+          "affidati alla nostra esperienza.",
+          style: ThemeUtils.homeContentSubtitle,
+        ),
+      ],
     );
   }
 }

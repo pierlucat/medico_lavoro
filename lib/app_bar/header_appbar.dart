@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:medico_lavoro/app_bar/header_text_button.dart';
+import 'package:medico_lavoro/utils/classes/page_navigation.dart';
 import 'package:medico_lavoro/utils/theme.dart';
 
 import 'logo.dart';
 import 'title.dart' as title;
 
 class HeaderAppBar extends StatelessWidget {
-  const HeaderAppBar({super.key});
+  final PageNavigation pageNavigation;
+  const HeaderAppBar({
+    super.key,
+    required this.pageNavigation,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +45,7 @@ class HeaderAppBar extends StatelessWidget {
                       Container(
                         height: 25,
                         width: 2,
-                        color: Theme.of(context).primaryColor,
+                        color: Color(ColorUtils.accentColor),
                       ),
                       SizedBox(width: 10),
                       title.Title(),
@@ -51,11 +56,28 @@ class HeaderAppBar extends StatelessWidget {
             ),
             Row(
               children: [
-                HeaderTextButton(text: 'Home'),
-                HeaderTextButton(text: 'Contattaci'),
-                HeaderTextButton(text: 'Chi siamo'),
-                HeaderTextButton(text: 'Associati'),
-                HeaderTextButton(text: 'Attività'),
+                HeaderTextButton(
+                  text: 'Home',
+                  keyToSection: pageNavigation.sectionKeys?[Sections.home],
+                ),
+                HeaderTextButton(
+                  text: 'Chi siamo',
+                  keyToSection: pageNavigation.sectionKeys?[Sections.whoWeAre],
+                ),
+                HeaderTextButton(
+                  text: 'Associati',
+                  keyToSection:
+                      pageNavigation.sectionKeys?[Sections.associates],
+                ),
+                HeaderTextButton(
+                  text: 'Servizi',
+                  keyToSection:
+                      pageNavigation.sectionKeys?[Sections.activities],
+                ),
+                HeaderTextButton(
+                  text: 'Contattaci',
+                  keyToSection: pageNavigation.sectionKeys?[Sections.contacts],
+                ),
               ],
             )
           ],

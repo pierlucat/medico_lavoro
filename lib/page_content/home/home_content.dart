@@ -6,6 +6,7 @@ import 'package:flutter/widgets.dart';
 import 'package:medico_lavoro/page_content/home/widgets/home_content_subtitle.dart';
 import 'package:medico_lavoro/page_content/home/widgets/home_content_title.dart';
 import 'package:medico_lavoro/utils/common_widgets/common_filled_button.dart';
+import 'package:medico_lavoro/utils/theme.dart';
 
 class HomeContent extends StatelessWidget {
   const HomeContent({super.key});
@@ -40,7 +41,14 @@ class HomeContent extends StatelessWidget {
                       SizedBox(
                         height: 40,
                       ),
-                      CommonFilledButton(text: 'Fatti inculare')
+                      CommonFilledButton(
+                        text: 'Contattaci',
+                        callBack: () => Scrollable.ensureVisible(
+                            duration: const Duration(
+                              milliseconds: 500,
+                            ),
+                            (key as GlobalKey).currentContext!),
+                      ),
                     ],
                   ),
                 ),
@@ -52,7 +60,7 @@ class HomeContent extends StatelessWidget {
         //   height: 40,
         // ),
         Container(
-          color: Theme.of(context).primaryColor,
+          color: Color(ColorUtils.accentColor),
           height: 400,
           width: double.infinity,
           child: Column(
@@ -67,7 +75,7 @@ class HomeContent extends StatelessWidget {
                 height: 20,
               ),
               Text(
-                'Assistenza in 48 settiane',
+                'Assistenza in 48 ore',
                 style: TextStyle(
                   fontSize: 36,
                   color: Colors.white,
@@ -85,62 +93,34 @@ class HomeContent extends StatelessWidget {
               SizedBox(
                 height: 15,
               ),
-              Column(
-                children: [
-                  RichText(
-                    text: TextSpan(
-                      children: [
-                        TextSpan(
-                          text: 'La nostra unica arte, è quella del ',
-                          style: TextStyle(
-                            fontSize: 18,
-                            color: Colors.white,
-                          ),
-                        ),
-                        TextSpan(
-                          text: 'cazzeggio',
-                          style: TextStyle(
-                            fontSize: 18,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        TextSpan(
-                          text: ', 24 ore su 24, 7 giorni su 7.',
-                          style: TextStyle(
-                            fontSize: 18,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ],
+              RichText(
+                text: TextSpan(
+                  children: [
+                    TextSpan(
+                      text: 'Prevenzione, Salute, Sicurezza.',
+                      style: TextStyle(
+                        fontSize: 26,
+                        color: Colors.white,
+                      ),
                     ),
-                  ),
-                  SizedBox(
-                    height: 40,
-                  ),
-                  RichText(
-                    text: TextSpan(
-                      children: [
-                        TextSpan(
-                          text: 'In tre parole: ',
-                          style: TextStyle(
-                            fontSize: 26,
-                            color: Colors.white,
-                          ),
-                        ),
-                        TextSpan(
-                          text: 'Degrado, Alcolismo, Spaccio.',
-                          style: TextStyle(
-                            fontSize: 26,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
+                  ],
+                ),
               ),
+              SizedBox(
+                height: 35,
+              ),
+              CommonFilledButton(
+                text: 'I nostri servizi',
+                buttonStyle: ButtonStyle(
+                  overlayColor: MaterialStatePropertyAll(
+                      Color(ColorUtils.lightAccentColor)),
+                  backgroundColor: MaterialStatePropertyAll(Colors.white),
+                  foregroundColor: MaterialStatePropertyAll(
+                    Color(ColorUtils.accentColor),
+                  ),
+                ),
+                callBack: () {},
+              )
             ],
           ),
         ),

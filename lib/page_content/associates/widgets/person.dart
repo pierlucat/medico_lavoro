@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:medico_lavoro/utils/common_widgets/content_section.dart';
 import 'package:medico_lavoro/utils/theme.dart';
 
 enum Direction {
@@ -205,21 +206,8 @@ class PersonTopToBottom extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: height,
-      padding: EdgeInsets.all(25),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(5),
-        boxShadow: const [
-          BoxShadow(
-            spreadRadius: -6,
-            blurRadius: 15,
-            color: Colors.black54,
-          ),
-        ],
-      ),
-      child: Column(
+    return AccentContentSection(
+      widget: Column(
         children: [
           if (path != null)
             Container(
@@ -248,14 +236,14 @@ class PersonTopToBottom extends StatelessWidget {
               height: 25,
             ),
           SizedBox(
-            width: 450,
+            width: 650,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
                   children: [
                     Container(
-                      color: Theme.of(context).colorScheme.primary,
+                      color: Color(ColorUtils.accentColor),
                       height: 25,
                       width: 5,
                     ),

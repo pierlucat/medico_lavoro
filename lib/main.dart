@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:medico_lavoro/app_bar/header_appbar.dart';
 import 'package:medico_lavoro/page_content/contact_us/contact_us.dart';
+import 'package:medico_lavoro/utils/classes/page_navigation.dart';
 
 import 'app_bar/logo.dart';
 import 'app_bar/title.dart' as title;
@@ -9,11 +10,13 @@ import 'page_content/page_content.dart';
 import 'utils/theme.dart';
 
 void main() {
-  runApp(const MainApp());
+  runApp(MainApp());
 }
 
 class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+  MainApp({super.key});
+
+  final navigationsKeys = PageNavigation();
 
   @override
   Widget build(BuildContext context) {
@@ -30,11 +33,17 @@ class MainApp extends StatelessWidget {
                 height: MediaQuery.of(context).size.height - 100,
                 child: SingleChildScrollView(
                   scrollDirection: Axis.vertical,
-                  child: PageContent(),
+                  child: PageContent(
+                    pageNavigation: navigationsKeys,
+                  ),
                 ),
               ),
             ),
-            Positioned(top: 0, child: HeaderAppBar()),
+            Positioned(
+                top: 0,
+                child: HeaderAppBar(
+                  pageNavigation: navigationsKeys,
+                )),
           ],
         ),
       ),

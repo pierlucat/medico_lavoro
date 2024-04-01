@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:medico_lavoro/page_content/contact_us/contact_us_form.dart';
 import 'package:medico_lavoro/page_content/contact_us/contact_us_info.dart';
+import 'package:medico_lavoro/utils/common_widgets/title_section.dart';
 
 class ContactUs extends StatelessWidget {
+  //final GlobalKey navigationKey;
   const ContactUs({super.key});
 
   @override
@@ -26,10 +28,28 @@ class ContactUs extends StatelessWidget {
 
   Widget _buildWideContainers() {
     return Container(
-      child: Row(children: [
-        Flexible(flex: 3, child: ContactUsForm()),
-        Flexible(flex: 2, child: ContactUsInfo())
-      ]),
+      padding: EdgeInsets.symmetric(
+        horizontal: 60,
+        vertical: 40,
+      ),
+      child: Column(
+        children: [
+          TitleSection(title: "Contattaci"),
+          SizedBox(
+            height: 20,
+          ),
+          Row(children: [
+            Flexible(
+              flex: 3,
+              child: ContactUsForm(),
+            ),
+            Flexible(
+              flex: 2,
+              child: ContactUsInfo(),
+            )
+          ]),
+        ],
+      ),
     );
   }
 }
