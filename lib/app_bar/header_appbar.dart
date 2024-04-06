@@ -9,21 +9,21 @@ import 'title.dart' as title;
 
 class HeaderAppBar extends StatelessWidget {
   final PageNavigation pageNavigation;
+  final bool isMobileWidth;
   const HeaderAppBar({
     super.key,
     required this.pageNavigation,
+    required this.isMobileWidth,
   });
 
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: ((context, constraints) {
-        if (MediaQuery.of(context).size.width > 600) {
+        if (!isMobileWidth) {
           return _buildWideContainer(context);
         } else {
-          return HeaderDrawer(
-            pageNavigation: pageNavigation,
-          );
+          return const HeaderLogo();
         }
       }),
     );
@@ -49,7 +49,7 @@ class HeaderAppBar extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            HeaderLogo(),
+            const HeaderLogo(),
             Row(
               children: [
                 HeaderTextButton(
