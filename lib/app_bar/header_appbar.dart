@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medico_lavoro/app_bar/header_drawer.dart';
 import 'package:medico_lavoro/app_bar/header_text_button.dart';
 import 'package:medico_lavoro/utils/classes/page_navigation.dart';
 import 'package:medico_lavoro/utils/theme.dart';
@@ -15,6 +16,20 @@ class HeaderAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return LayoutBuilder(
+      builder: ((context, constraints) {
+        if (MediaQuery.of(context).size.width > 600) {
+          return _buildWideContainer(context);
+        } else {
+          return HeaderDrawer(
+            pageNavigation: pageNavigation,
+          );
+        }
+      }),
+    );
+  }
+
+  Widget _buildWideContainer(BuildContext context) {
     return Container(
       height: 100,
       width: MediaQuery.of(context).size.width,
@@ -34,26 +49,7 @@ class HeaderAppBar extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Container(
-              width: 500,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Logo(),
-                  Row(
-                    children: [
-                      Container(
-                        height: 25,
-                        width: 2,
-                        color: Color(ColorUtils.accentColor),
-                      ),
-                      SizedBox(width: 10),
-                      title.Title(),
-                    ],
-                  ),
-                ],
-              ),
-            ),
+            HeaderLogo(),
             Row(
               children: [
                 HeaderTextButton(
@@ -82,6 +78,36 @@ class HeaderAppBar extends StatelessWidget {
             )
           ],
         ),
+      ),
+    );
+  }
+}
+
+class HeaderLogo extends StatelessWidget {
+  const HeaderLogo({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 500,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Logo(),
+          Row(
+            children: [
+              Container(
+                height: 25,
+                width: 2,
+                color: Color(ColorUtils.accentColor),
+              ),
+              SizedBox(width: 10),
+              title.Title(),
+            ],
+          ),
+        ],
       ),
     );
   }

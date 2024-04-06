@@ -12,7 +12,7 @@ class ContactUs extends StatelessWidget {
     return LayoutBuilder(
       builder: ((context, constraints) {
         if (constraints.maxWidth > 600) {
-          return _buildWideContainers();
+          return _buildWideContainer();
         } else {
           return _buildNormalContainer();
         }
@@ -22,11 +22,13 @@ class ContactUs extends StatelessWidget {
 
   Widget _buildNormalContainer() {
     return Container(
-      child: Column(children: [ContactUsForm(), ContactUsInfo()]),
+      padding: EdgeInsets.all(13),
+      child: Column(
+          children: [ContactUsForm(), SizedBox(height: 13), ContactUsInfo()]),
     );
   }
 
-  Widget _buildWideContainers() {
+  Widget _buildWideContainer() {
     return Container(
       padding: EdgeInsets.symmetric(
         horizontal: 60,
@@ -38,7 +40,7 @@ class ContactUs extends StatelessWidget {
           SizedBox(
             height: 20,
           ),
-          Row(children: [
+          Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
             Flexible(
               flex: 3,
               child: ContactUsForm(),
