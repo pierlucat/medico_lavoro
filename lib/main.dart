@@ -22,15 +22,18 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+        backgroundColor: Color(ColorUtils.primaryColor),
         body: Stack(
           children: [
             //AppBar
             Positioned(
-              top: 100,
+              top: SizingUtils.topBarHeight,
               left: 0,
               right: 0,
-              child: SizedBox(
-                height: MediaQuery.of(context).size.height - 100,
+              child: Container(
+                color: Color(ColorUtils.backgroundGrey),
+                height: MediaQuery.of(context).size.height -
+                    SizingUtils.topBarHeight,
                 child: SingleChildScrollView(
                   scrollDirection: Axis.vertical,
                   child: PageContent(
@@ -40,10 +43,13 @@ class MainApp extends StatelessWidget {
               ),
             ),
             Positioned(
-                top: 0,
-                child: HeaderAppBar(
-                  pageNavigation: navigationsKeys,
-                )),
+              top: 0,
+              left: 0,
+              right: 0,
+              child: HeaderAppBar(
+                pageNavigation: navigationsKeys,
+              ),
+            ),
           ],
         ),
       ),

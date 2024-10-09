@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:medico_lavoro/page_content/home/widgets/home_content_subtitle.dart';
 import 'package:medico_lavoro/page_content/home/widgets/home_content_title.dart';
+import 'package:medico_lavoro/page_content/home/widgets/home_image.dart';
+import 'package:medico_lavoro/page_content/home/widgets/home_title.dart';
 import 'package:medico_lavoro/utils/common_widgets/common_filled_button.dart';
 import 'package:medico_lavoro/utils/theme.dart';
 
@@ -13,14 +15,40 @@ class HomeContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return Container(
+      color: Color(ColorUtils.primaryColor),
+      child: Center(
+        child: Container(
+          padding: const EdgeInsets.symmetric(
+            horizontal: SizingUtils.leftRightMargin,
+            vertical: SizingUtils.topBottomSectionMargin,
+          ),
+          child: ConstrainedBox(
+            constraints: BoxConstraints(
+              maxWidth: 1500,
+            ),
+            child: Row(
+              children: [
+                Expanded(
+                  child: HomeTitle(),
+                ),
+                Expanded(
+                  child: HomeImage(),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
     return Column(
       children: [
         Stack(
           children: [
             Image.asset(
               'assets/mario_al_lavoro.png',
-              width: MediaQuery.of(context).size.width,
-              height: 550,
+              width: MediaQuery.of(context).size.width / 2,
+              height: 750,
               fit: BoxFit.cover,
             ),
             Positioned(

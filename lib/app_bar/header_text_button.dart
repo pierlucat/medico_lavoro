@@ -18,21 +18,21 @@ class HeaderTextButton extends StatefulWidget {
 class _HeaderTextButtonState extends State<HeaderTextButton> {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 8.0),
-      child: TextButton(
-        onPressed: () {
-          Scrollable.ensureVisible(
-            duration: const Duration(
-              milliseconds: 500,
-            ),
-            widget.keyToSection!.currentContext!,
-          );
-        },
-        child: Text(
-          widget.text,
-          style: ThemeUtils.headerButton,
-        ),
+    return TextButton(
+      style: ButtonStyle(
+        padding: WidgetStatePropertyAll(EdgeInsets.zero),
+      ),
+      onPressed: () {
+        Scrollable.ensureVisible(
+          duration: const Duration(
+            milliseconds: 500,
+          ),
+          widget.keyToSection!.currentContext!,
+        );
+      },
+      child: Text(
+        widget.text,
+        style: ThemeUtils.headerButton,
       ),
     );
   }

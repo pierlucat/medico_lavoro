@@ -25,16 +25,6 @@ class ContactUsFormState extends State<ContactUsForm> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          SizedBox(
-            height: 21,
-          ),
-          Text(
-            "Compila il form, richiedi informazioni sui nostri servizi, e sarai presto ricontattato.",
-            style: ThemeUtils.content,
-          ),
-          SizedBox(
-            height: 21,
-          ),
           Column(
             children: [
               Row(
@@ -96,8 +86,12 @@ class ContactUsFormState extends State<ContactUsForm> {
               CommonFilledButton(
                 text: "Invia messaggio",
                 buttonStyle: ButtonStyle(
-                  backgroundColor: MaterialStatePropertyAll(
-                    Color(ColorUtils.accentColor),
+                  backgroundColor: WidgetStatePropertyAll(Colors.black),
+                ),
+                textStyle: TextStyle(
+                  fontSize: 18,
+                  color: Color(
+                    ColorUtils.backgroundGrey,
                   ),
                 ),
                 callBack: () async {
