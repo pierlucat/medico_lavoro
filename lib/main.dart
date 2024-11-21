@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:medico_lavoro/app_bar/header_appbar.dart';
-import 'package:medico_lavoro/page_content/contact_us/contact_us.dart';
+import 'package:medico_lavoro/app_bar/header_drawer.dart';
 import 'package:medico_lavoro/utils/classes/page_navigation.dart';
 
-import 'app_bar/logo.dart';
-import 'app_bar/title.dart' as title;
 import 'page_content/page_content.dart';
 import 'utils/theme.dart';
 
@@ -20,31 +18,35 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool isMobileWidth = MediaQuery.of(context).size.width < 600;
     return MaterialApp(
       home: Scaffold(
-        body: Stack(
-          children: [
-            //AppBar
-            Positioned(
-              top: 100,
-              left: 0,
-              right: 0,
-              child: SizedBox(
-                height: MediaQuery.of(context).size.height - 100,
-                child: SingleChildScrollView(
-                  scrollDirection: Axis.vertical,
-                  child: PageContent(
-                    pageNavigation: navigationsKeys,
-                  ),
-                ),
-              ),
-            ),
-            Positioned(
-                top: 0,
-                child: HeaderAppBar(
+        appBar: PreferredSize(
+          preferredSize: const Size.fromHeight(
+              100.0), // qui puoi definire l'altezza dell'AppBar
+          child: Expanded(
+            child: AppBar(
+              toolbarHeight: 100,
+              actions: [
+                HeaderAppBar(
                   pageNavigation: navigationsKeys,
-                )),
-          ],
+                  isMobileWidth: isMobileWidth,
+                ),
+              ],
+            ),
+          ),
+        ),
+        drawer: isMobileWidth
+            ? HeaderDrawer(pageNavigation: navigationsKeys)
+            : null,
+        body: SizedBox(
+          height: MediaQuery.of(context).size.height - 100,
+          child: SingleChildScrollView(
+            scrollDirection: Axis.vertical,
+            child: PageContent(
+              pageNavigation: navigationsKeys,
+            ),
+          ),
         ),
       ),
       theme: ThemeUtils.theme,
