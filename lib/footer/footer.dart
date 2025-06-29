@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:medico_lavoro/footer/widgets/socials.dart';
 import 'package:medico_lavoro/utils/theme.dart';
 
+import '../utils/breakpoint_utils.dart';
+
 class Footer extends StatelessWidget {
   const Footer({super.key});
 
@@ -9,13 +11,21 @@ class Footer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width,
-      height: 400,
+      height: 500,
       decoration: BoxDecoration(
         color: Color(ColorUtils.footerBackground),
       ),
-      padding: const EdgeInsets.symmetric(
-        horizontal: SizingUtils.leftRightMargin,
-        vertical: SizingUtils.topBottomSectionMargin,
+      padding: EdgeInsets.symmetric(
+        horizontal: BreakpointUtils.getResponsiveValue(
+          context,
+          [
+            SizingUtils.leftRightMarginXS,
+            SizingUtils.leftRightMarginS,
+            SizingUtils.leftRightMarginM,
+            SizingUtils.leftRightMarginL
+          ],
+        ),
+        vertical: SizingUtils.spaceValueFunc(context),
       ),
       child: Center(
         child: ConstrainedBox(
@@ -25,6 +35,7 @@ class Footer extends StatelessWidget {
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Expanded(
                     child: Center(
@@ -33,20 +44,72 @@ class Footer extends StatelessWidget {
                         children: [
                           Text(
                             "Chi siamo:",
-                            style: ThemeUtils.footerTextStryle.copyWith(
-                              fontSize: 18,
-                            ),
+                            style: ThemeUtils.footerTitleTextFunc(context),
                           ),
                           SizedBox(
                             height: 10,
                           ),
                           Text(
                             "Toscanetti s.l.r.",
-                            style: ThemeUtils.footerTextStryle,
+                            style: ThemeUtils.footerBodyTextFunc(context),
                           ),
                           Text(
                             "Ci impegnamo ogni giorno per garantire la vostra sicurezza e la sicurezza dei vostri dipendenti.",
-                            style: ThemeUtils.footerTextStryle,
+                            style: ThemeUtils.footerBodyTextFunc(context),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 40,
+                  ),
+                  Expanded(
+                    child: Center(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Link utili:",
+                            style: ThemeUtils.footerTitleTextFunc(context),
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          TextButton(
+                            onPressed: () {},
+                            child: Text(
+                              "Home",
+                              style: ThemeUtils.footerBodyTextFunc(context),
+                            ),
+                          ),
+                          TextButton(
+                            onPressed: () {},
+                            child: Text(
+                              "Chi siamo",
+                              style: ThemeUtils.footerBodyTextFunc(context),
+                            ),
+                          ),
+                          TextButton(
+                            onPressed: () {},
+                            child: Text(
+                              "Servizi",
+                              style: ThemeUtils.footerBodyTextFunc(context),
+                            ),
+                          ),
+                          TextButton(
+                            onPressed: () {},
+                            child: Text(
+                              "Legislazione",
+                              style: ThemeUtils.footerBodyTextFunc(context),
+                            ),
+                          ),
+                          TextButton(
+                            onPressed: () {},
+                            child: Text(
+                              "Contatti",
+                              style: ThemeUtils.footerBodyTextFunc(context),
+                            ),
                           ),
                         ],
                       ),
@@ -62,17 +125,19 @@ class Footer extends StatelessWidget {
                         children: [
                           Text(
                             "I nostri centri:",
-                            style: ThemeUtils.footerTextStryle.copyWith(
-                              fontSize: 18,
-                            ),
+                            style: ThemeUtils.footerTitleTextFunc(context),
                           ),
                           SizedBox(
                             height: 10,
                           ),
-                          Text("- Contrà Porta Santa Croce, 38, 36100 (VI)",
-                              style: ThemeUtils.footerTextStryle),
-                          Text("- Stradella del Garofolino, 12, 36100 (VI)",
-                              style: ThemeUtils.footerTextStryle),
+                          Text(
+                            "- Contrà Porta Santa Croce, 38, 36100 (VI)",
+                            style: ThemeUtils.footerBodyTextFunc(context),
+                          ),
+                          Text(
+                            "- Stradella del Garofolino, 12, 36100 (VI)",
+                            style: ThemeUtils.footerBodyTextFunc(context),
+                          ),
                         ],
                       ),
                     ),
@@ -87,23 +152,27 @@ class Footer extends StatelessWidget {
                         children: [
                           Text(
                             "Contatti:",
-                            style: ThemeUtils.footerTextStryle.copyWith(
-                              fontSize: 18,
-                            ),
+                            style: ThemeUtils.footerTitleTextFunc(context),
                           ),
                           SizedBox(
                             height: 10,
                           ),
-                          Text("Tel: (+39) 340 9343235",
-                              style: ThemeUtils.footerTextStryle),
+                          Text(
+                            "Tel: (+39) 340 9343235",
+                            style: ThemeUtils.footerBodyTextFunc(context),
+                          ),
                           Text(
                             "Fax: (+39) 398 3207462",
-                            style: ThemeUtils.footerTextStryle,
+                            style: ThemeUtils.footerBodyTextFunc(context),
                           ),
-                          Text("Mail: info-toscanetti@group.it",
-                              style: ThemeUtils.footerTextStryle),
-                          Text("Mail: segreteria-toscanetti@group.it",
-                              style: ThemeUtils.footerTextStryle),
+                          Text(
+                            "Mail: info-toscanetti@group.it",
+                            style: ThemeUtils.footerBodyTextFunc(context),
+                          ),
+                          Text(
+                            "Mail: segreteria-toscanetti@group.it",
+                            style: ThemeUtils.footerBodyTextFunc(context),
+                          ),
                         ],
                       ),
                     ),

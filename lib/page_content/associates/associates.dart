@@ -13,7 +13,7 @@ class Associates extends StatelessWidget {
       padding: const EdgeInsets.all(60.0),
       child: Column(
         children: [
-          TitleSection(title: "Associati: "),
+          TitleSection(title: "Legislazione: "),
           SizedBox(
             height: 40,
           ),

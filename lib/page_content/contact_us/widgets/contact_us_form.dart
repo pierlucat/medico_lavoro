@@ -5,6 +5,8 @@ import 'package:medico_lavoro/utils/common_widgets/common_filled_button.dart';
 import 'package:medico_lavoro/utils/common_widgets/common_input_field.dart';
 import 'package:medico_lavoro/utils/theme.dart';
 
+import '../../../utils/breakpoint_utils.dart';
+
 class ContactUsForm extends StatefulWidget {
   const ContactUsForm({super.key});
 
@@ -22,101 +24,117 @@ class ContactUsFormState extends State<ContactUsForm> {
     // Build a Form widget using the _formKey created above.
     return Form(
       key: _formKey,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Column(
-            children: [
-              Row(
-                children: [
-                  Expanded(
-                    child: CommonInputField(
-                      label: 'Nome e Cognome',
-                    ),
-                  ),
-                  SizedBox(width: 10), // Spazio tra i due TextField
-                  Expanded(
-                    child: CommonInputField(
-                      label: 'Azienda',
-                    ),
-                  ),
-                ],
-              ),
-              Row(
-                children: [
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 8.0),
+      child: Padding(
+        padding: const EdgeInsets.all(15.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Column(
+              children: [
+                Row(
+                  children: [
+                    Expanded(
                       child: CommonInputField(
-                        label: 'Mail',
-                        textInputType: TextInputType.emailAddress,
+                        label: 'Nome e Cognome',
                       ),
                     ),
-                  ),
-                  SizedBox(width: 10),
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 8.0),
+                    SizedBox(width: 15), // Spazio tra i due TextField
+                    Expanded(
                       child: CommonInputField(
-                        label: 'Telefono',
-                        textInputType: TextInputType.phone,
+                        label: 'Azienda',
                       ),
                     ),
+                  ],
+                ),
+                SizedBox(
+                  height: 15,
+                ),
+                Row(
+                  children: [
+                    Expanded(
+                      child: Padding(
+                        padding: const EdgeInsets.only(top: 8.0),
+                        child: CommonInputField(
+                          label: 'Mail',
+                          textInputType: TextInputType.emailAddress,
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: 15),
+                    Expanded(
+                      child: Padding(
+                        padding: const EdgeInsets.only(top: 8.0),
+                        child: CommonInputField(
+                          label: 'Telefono',
+                          textInputType: TextInputType.phone,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 15,
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 8.0),
+                  child: CommonInputField(
+                    label: 'Messaggio',
+                    textInputType: TextInputType.multiline,
+                    maxLines: 6,
                   ),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: BreakpointUtils.getResponsiveValue(
+                context,
+                [
+                  SizingUtils.spaceXS,
+                  SizingUtils.spaceS,
+                  SizingUtils.spaceM,
+                  SizingUtils.spaceM,
                 ],
               ),
-              Padding(
-                padding: const EdgeInsets.only(top: 8.0),
-                child: CommonInputField(
-                  label: 'Messaggio',
-                  textInputType: TextInputType.multiline,
-                  maxLines: 3,
+            ),
+            Row(
+              children: [
+                Expanded(
+                  child: SizedBox(),
                 ),
-              ),
-            ],
-          ),
-          SizedBox(
-            height: 40,
-          ),
-          Row(
-            children: [
-              Expanded(
-                child: SizedBox(),
-              ),
-              CommonFilledButton(
-                text: "Invia messaggio",
-                buttonStyle: ButtonStyle(
-                  backgroundColor: WidgetStatePropertyAll(Colors.black),
-                ),
-                textStyle: TextStyle(
-                  fontSize: 18,
-                  color: Color(
-                    ColorUtils.backgroundGrey,
+                CommonFilledButton(
+                  text: "Invia richiesta",
+                  buttonStyle: ButtonStyle(
+                    backgroundColor: WidgetStatePropertyAll(Colors.black),
                   ),
+                  textStyle: TextStyle(
+                    color: Color(
+                      ColorUtils.backgroundGrey,
+                    ),
+                  ),
+                  callBack: () async {
+                    // Logica di invio del form
+                    if (_formKey.currentState!.validate()) {
+                      //initialize EmailSender class
+                      // EmailSender emailSender = EmailSender();
+                      // //initialize send method to response variable
+                      // var response = await emailSender.send("afridayan01@gmail.com");
+                      // if (response["message"] == "emailSendSuccess") {
+                      //   print(response);
+                      // } else {
+                      //   print("something Failed");
+                      //   //for understanding the error
+                      //   print(response);
+                      // }
+                    }
+                  },
                 ),
-                callBack: () async {
-                  // Logica di invio del form
-                  if (_formKey.currentState!.validate()) {
-                    //initialize EmailSender class
-                    // EmailSender emailSender = EmailSender();
-                    // //initialize send method to response variable
-                    // var response = await emailSender.send("afridayan01@gmail.com");
-                    // if (response["message"] == "emailSendSuccess") {
-                    //   print(response);
-                    // } else {
-                    //   print("something Failed");
-                    //   //for understanding the error
-                    //   print(response);
-                    // }
-                  }
-                },
-              ),
-              Expanded(
-                child: SizedBox(),
-              ),
-            ],
-          ),
-        ],
+                Expanded(
+                  child: SizedBox(),
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }

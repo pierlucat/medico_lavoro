@@ -63,7 +63,6 @@ class _AccordionEntryState extends State<AccordionEntry>
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 10),
-      width: 800,
       decoration: BoxDecoration(
         border: Border(
           bottom: BorderSide(width: 1),
@@ -77,16 +76,17 @@ class _AccordionEntryState extends State<AccordionEntry>
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
-                  widget.title,
-                  style: TextStyle(
-                      fontSize: 32, color: Color(ColorUtils.accentColor)),
+                Expanded(
+                  child: Text(
+                    widget.title,
+                    style: ThemeUtils.accordionTitleTextSizeFunc(context),
+                  ),
                 ),
                 Stack(
                   children: [
                     Icon(
                       Icons.remove,
-                      size: 32,
+                      size: ThemeUtils.accordionIconSizeValue(context),
                       color: Color(ColorUtils.accentColor),
                     ),
                     AnimatedSwitcher(
@@ -105,13 +105,13 @@ class _AccordionEntryState extends State<AccordionEntry>
                           ? Icon(
                               Icons.remove,
                               key: ValueKey('vertical'),
-                              size: 32,
+                              size: ThemeUtils.accordionIconSizeValue(context),
                               color: Color(ColorUtils.accentColor),
                             )
                           : Icon(
                               Icons.remove,
                               key: ValueKey('horizontal'),
-                              size: 32,
+                              size: ThemeUtils.accordionIconSizeValue(context),
                               color: Color(ColorUtils.accentColor),
                             ),
                     )
@@ -132,7 +132,6 @@ class _AccordionEntryState extends State<AccordionEntry>
                     top: 20,
                     bottom: 20,
                   ),
-                  width: 650,
                   child: AccordionEntryContent(
                     text: widget.text,
                   ),

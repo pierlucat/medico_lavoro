@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:medico_lavoro/utils/theme.dart';
 
+import '../breakpoint_utils.dart';
+
 class CommonFilledButton extends StatelessWidget {
   final String text;
   Function? callBack;
@@ -17,8 +19,24 @@ class CommonFilledButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 220, // Imposta la larghezza desiderata
-      height: 60, // Imposta l'altezza desiderata
+      width: BreakpointUtils.getResponsiveValue<double>(
+        context,
+        [
+          140,
+          140,
+          180,
+          220,
+        ],
+      ),
+      height: BreakpointUtils.getResponsiveValue<double>(
+        context,
+        [
+          40,
+          40,
+          50,
+          60,
+        ],
+      ),
       child: FilledButton(
         style: buttonStyle,
         onPressed: () {
@@ -30,7 +48,15 @@ class CommonFilledButton extends StatelessWidget {
           text,
           style: textStyle ??
               TextStyle(
-                fontSize: 18,
+                fontSize: BreakpointUtils.getResponsiveValue<double>(
+                  context,
+                  [
+                    14,
+                    14,
+                    16,
+                    18,
+                  ],
+                ),
                 color: Color(
                   ColorUtils.primaryColor,
                 ),

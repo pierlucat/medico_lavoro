@@ -4,11 +4,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:medico_lavoro/page_content/home/widgets/home_content_subtitle.dart';
-import 'package:medico_lavoro/page_content/home/widgets/home_content_title.dart';
 import 'package:medico_lavoro/page_content/home/widgets/home_image.dart';
 import 'package:medico_lavoro/page_content/home/widgets/home_title.dart';
 import 'package:medico_lavoro/utils/common_widgets/common_filled_button.dart';
 import 'package:medico_lavoro/utils/theme.dart';
+import 'package:responsive_framework/responsive_framework.dart';
+
+import '../../utils/breakpoint_utils.dart';
 
 class HomeContent extends StatelessWidget {
   const HomeContent({super.key});
@@ -19,139 +21,49 @@ class HomeContent extends StatelessWidget {
       color: Color(ColorUtils.primaryColor),
       child: Center(
         child: Container(
-          padding: const EdgeInsets.symmetric(
-            horizontal: SizingUtils.leftRightMargin,
-            vertical: SizingUtils.topBottomSectionMargin,
+          padding: EdgeInsets.symmetric(
+            horizontal: BreakpointUtils.getResponsiveValue(
+              context,
+              [
+                SizingUtils.leftRightMarginXS,
+                SizingUtils.leftRightMarginS,
+                SizingUtils.leftRightMarginM,
+                SizingUtils.leftRightMarginL
+              ],
+            ),
+            vertical: SizingUtils.spaceValueFunc(context),
           ),
           child: ConstrainedBox(
             constraints: BoxConstraints(
               maxWidth: 1500,
             ),
-            child: Row(
-              children: [
-                Expanded(
-                  child: HomeTitle(),
-                ),
-                Expanded(
-                  child: HomeImage(),
-                ),
-              ],
-            ),
+            child: ResponsiveBreakpoints.of(context)
+                    .equals(BreakpointUtils.xsmall.name)
+                ? _mobileView(context)
+                : _standardView(),
           ),
         ),
       ),
     );
+  }
+
+  Widget _mobileView(BuildContext context) {
     return Column(
       children: [
-        Stack(
-          children: [
-            Image.asset(
-              'assets/mario_al_lavoro.png',
-              width: MediaQuery.of(context).size.width / 2,
-              height: 750,
-              fit: BoxFit.cover,
-            ),
-            Positioned(
-              right: 0,
-              height: 550,
-              width: MediaQuery.of(context).size.width / 2.5,
-              child: ClipRRect(
-                child: BackdropFilter(
-                  filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      HomeContentTitle(),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      HomeContentSubtitle(),
-                      SizedBox(
-                        height: 40,
-                      ),
-                      CommonFilledButton(
-                        text: 'Contattaci',
-                        callBack: () => Scrollable.ensureVisible(
-                            duration: const Duration(
-                              milliseconds: 500,
-                            ),
-                            (key as GlobalKey).currentContext!),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-          ],
-        ),
-        // SizedBox(
-        //   height: 40,
-        // ),
-        Container(
-          color: Color(ColorUtils.accentColor),
-          height: 400,
-          width: double.infinity,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(
-                Icons.timer,
-                size: 56,
-                color: Colors.white,
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Text(
-                'Assistenza in 48 ore',
-                style: TextStyle(
-                  fontSize: 36,
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              SizedBox(
-                height: 15,
-              ),
-              Container(
-                color: Colors.white,
-                width: 50,
-                height: 3,
-              ),
-              SizedBox(
-                height: 15,
-              ),
-              RichText(
-                text: TextSpan(
-                  children: [
-                    TextSpan(
-                      text: 'Prevenzione, Salute, Sicurezza.',
-                      style: TextStyle(
-                        fontSize: 26,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                height: 35,
-              ),
-              CommonFilledButton(
-                text: 'I nostri servizi',
-                buttonStyle: ButtonStyle(
-                  overlayColor: MaterialStatePropertyAll(
-                      Color(ColorUtils.lightAccentColor)),
-                  backgroundColor: MaterialStatePropertyAll(Colors.white),
-                  foregroundColor: MaterialStatePropertyAll(
-                    Color(ColorUtils.accentColor),
-                  ),
-                ),
-                callBack: () {},
-              )
-            ],
-          ),
-        ),
+        HomeTitle(),
+        SizingUtils.spacerFunc(context),
+        HomeImage(),
+      ],
+    );
+  }
+
+  Widget _standardView() {
+    return Row(
+      children: [
+        Expanded(child: HomeTitle()),
+        Expanded(
+          child: HomeImage(),
+        )
       ],
     );
   }

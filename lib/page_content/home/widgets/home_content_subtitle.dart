@@ -10,11 +10,11 @@ class HomeContentSubtitle extends StatelessWidget {
       children: [
         Text(
           "Scopri il nostro studio di medicina del lavoro ed",
-          style: ThemeUtils.homeContentSubtitle,
+          style: ThemeUtils.bodyTextFunc(context),
         ),
         Text(
           "affidati alla nostra esperienza.",
-          style: ThemeUtils.homeContentSubtitle,
+          style: ThemeUtils.bodyTextFunc(context),
         ),
       ],
     );
