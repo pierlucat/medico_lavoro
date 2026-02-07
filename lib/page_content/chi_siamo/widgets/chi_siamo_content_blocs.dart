@@ -95,19 +95,10 @@ class ChiSiamoTitle extends StatelessWidget {
               title: "Sorveglianza sanitaria e idoneità al lavoro",
               image: 'assets/programma_prevenzione_.png',
               width: 350,
-              height: 500,
+              height: 400,
               button: CommonFilledButton(
                 text: 'Scopri',
-                buttonStyle: ButtonStyle(
-                  backgroundColor: WidgetStatePropertyAll(
-                    Color(ColorUtils.accentColor),
-                  ),
-                ),
-                textStyle: TextStyle(
-                  color: Color(
-                    ColorUtils.backgroundGrey,
-                  ),
-                ),
+                textColor: Colors.white,
                 callBack: () {
                   context.go(
                     '/servizi/dettaglio-servizio',
@@ -124,19 +115,10 @@ class ChiSiamoTitle extends StatelessWidget {
               title: "Valutazione e gestione dei rischi",
               image: 'assets/programma_prevenzione_.png',
               width: 350,
-              height: 500,
+              height: 400,
               button: CommonFilledButton(
                 text: 'Scopri',
-                buttonStyle: ButtonStyle(
-                  backgroundColor: WidgetStatePropertyAll(
-                    Color(ColorUtils.accentColor),
-                  ),
-                ),
-                textStyle: TextStyle(
-                  color: Color(
-                    ColorUtils.backgroundGrey,
-                  ),
-                ),
+                textColor: Colors.white,
                 callBack: () {
                   context.go(
                     '/servizi/dettaglio-servizio',
@@ -153,48 +135,30 @@ class ChiSiamoTitle extends StatelessWidget {
               title: "Prevenzione e consulenza normativa",
               image: 'assets/programma_prevenzione_.png',
               width: 350,
-              height: 500,
-              button: CommonFilledButton(
-                text: 'Scopri',
-                buttonStyle: ButtonStyle(
-                  backgroundColor: WidgetStatePropertyAll(
-                    Color(ColorUtils.accentColor),
-                  ),
-                ),
-                textStyle: TextStyle(
-                  color: Color(
-                    ColorUtils.backgroundGrey,
-                  ),
-                ),
-                callBack: () {
-                  context.go(
-                    '/servizi/dettaglio-servizio',
-                    extra: {
-                      'titolo': 'Prevenzione e consulenza normativa',
-                      'immagine': 'immagine_url',
-                      'descrizione': 'Descrizione del servizio',
-                    },
-                  );
-                },
-              ),
+              height: 400,
+              // button: CommonFilledButton(
+              //   text: 'Scopri',
+              //   textColor: Colors.white,
+              //   callBack: () {
+              //     context.go(
+              //       '/servizi/dettaglio-servizio',
+              //       extra: {
+              //         'titolo': 'Prevenzione e consulenza normativa',
+              //         'immagine': 'immagine_url',
+              //         'descrizione': 'Descrizione del servizio',
+              //       },
+              //     );
+              //   },
+              // ),
             ),
             TileServizio(
               title: "Ergonomia e benessere sul lavoro",
               image: 'assets/programma_prevenzione_.png',
               width: 350,
-              height: 500,
+              height: 400,
               button: CommonFilledButton(
                 text: 'Scopri',
-                buttonStyle: ButtonStyle(
-                  backgroundColor: WidgetStatePropertyAll(
-                    Color(ColorUtils.accentColor),
-                  ),
-                ),
-                textStyle: TextStyle(
-                  color: Color(
-                    ColorUtils.backgroundGrey,
-                  ),
-                ),
+                textColor: Colors.white,
                 callBack: () {
                   context.go(
                     '/servizi/dettaglio-servizio',
@@ -309,17 +273,6 @@ class ChiSiamoSubtitle extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(
-            height: BreakpointUtils.getResponsiveValue(
-              context,
-              [
-                SizingUtils.spaceXS,
-                SizingUtils.spaceS,
-                SizingUtils.spaceM,
-                SizingUtils.spaceL,
-              ],
-            ),
-          ),
           RichText(
             text: TextSpan(
               style: ThemeUtils.bodyTextFunc(context).copyWith(
@@ -327,15 +280,15 @@ class ChiSiamoSubtitle extends StatelessWidget {
               ),
               children: [
                 TextSpan(
-                  text: 'Il nostro team è composto da ',
+                  text: 'Il nostro studio si compone di ',
                 ),
                 TextSpan(
-                  text: 'medici specializzati in medicina del lavoro',
+                  text: 'medici Specializzati in Medicina del Lavoro',
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
                 TextSpan(
                   text:
-                      ' e da professionisti esperti in igiene industriale, sicurezza e gestione documentale. Operiamo con trasparenza, serietà e tempestività per garantire:',
+                      ' e collaboriamo con esperti in Igiene Industriale e sicurezza. Operiamo con trasparenza, serietá e tempestivitá per garantire:',
                 ),
               ],
             ),

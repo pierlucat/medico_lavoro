@@ -7,7 +7,7 @@ import 'package:medico_lavoro/page_content/legislazione/widgets/legislazione_con
 import 'package:medico_lavoro/page_content/legislazione/widgets/legislazione_paragrafi.dart';
 import 'package:medico_lavoro/utils/theme.dart';
 
-import '../../footer/footer.dart';
+import '../../base_layout/footer/footer.dart';
 import '../../utils/breakpoint_utils.dart';
 
 class LegislazioneContent extends StatelessWidget {

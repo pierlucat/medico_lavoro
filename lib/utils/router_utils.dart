@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:medico_lavoro/pages/home.dart';
 
@@ -24,7 +25,7 @@ class GoRouterUtils {
               WidgetsBinding.instance.addPostFrameCallback((_) {
                 PageNotifier.currentPage.value = '/';
               });
-              return const Home();
+              return SelectionArea(child: const Home());
             },
           ),
           GoRoute(

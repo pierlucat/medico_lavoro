@@ -7,38 +7,37 @@ class CommonFilledButton extends StatelessWidget {
   final String text;
   Function? callBack;
   ButtonStyle? buttonStyle;
-  TextStyle? textStyle;
+  Color? textColor;
   CommonFilledButton({
     super.key,
     required this.text,
     this.callBack,
     this.buttonStyle,
-    this.textStyle,
+    this.textColor,
   });
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: BreakpointUtils.getResponsiveValue<double>(
-        context,
-        [
-          140,
-          140,
-          180,
-          220,
-        ],
-      ),
-      height: BreakpointUtils.getResponsiveValue<double>(
-        context,
-        [
-          40,
-          40,
-          50,
-          60,
-        ],
-      ),
+      width: 220,
+      height: 60,
       child: FilledButton(
-        style: buttonStyle,
+        style: buttonStyle ??
+            ButtonStyle(
+              elevation: WidgetStatePropertyAll(
+                5,
+              ),
+              backgroundColor: WidgetStatePropertyAll(
+                Colors.black,
+              ),
+              shape: WidgetStatePropertyAll(
+                RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(
+                    SizingUtils.radiusRectangle,
+                  ),
+                ),
+              ),
+            ),
         onPressed: () {
           if (callBack != null) {
             callBack!();
@@ -46,21 +45,13 @@ class CommonFilledButton extends StatelessWidget {
         },
         child: Text(
           text,
-          style: textStyle ??
-              TextStyle(
-                fontSize: BreakpointUtils.getResponsiveValue<double>(
-                  context,
-                  [
-                    14,
-                    14,
-                    16,
-                    18,
-                  ],
-                ),
-                color: Color(
+          style: TextStyle(
+            fontSize: 18,
+            color: textColor ??
+                Color(
                   ColorUtils.primaryColor,
                 ),
-              ),
+          ),
         ),
       ),
     );

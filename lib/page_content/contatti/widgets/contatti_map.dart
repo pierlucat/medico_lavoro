@@ -37,7 +37,7 @@ class _ContattiMapState extends State<ContattiMap> {
                 ColorUtils.accentColor,
               ),
             ),
-            borderRadius: BorderRadius.circular(25),
+            borderRadius: BorderRadius.circular(SizingUtils.radiusRectangle),
             color: Color(0xFFF7F7F7),
           ),
           child: Padding(
@@ -51,9 +51,11 @@ class _ContattiMapState extends State<ContattiMap> {
                     return Column(
                       children: [
                         ClipRRect(
-                          borderRadius: BorderRadius.circular(25),
+                          borderRadius: BorderRadius.circular(
+                              SizingUtils.radiusRectangle),
                           child: InkWell(
-                            borderRadius: BorderRadius.circular(25),
+                            borderRadius: BorderRadius.circular(
+                                SizingUtils.radiusRectangle),
                             onTap: () {
                               setState(() {
                                 selectedIndex = index; // Update selected index

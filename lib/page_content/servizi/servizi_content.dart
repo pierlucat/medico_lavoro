@@ -4,15 +4,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:medico_lavoro/page_content/chi_siamo/widgets/chi_siamo_content_blocs.dart';
-import 'package:medico_lavoro/page_content/home/widgets/home_content_subtitle.dart';
-import 'package:medico_lavoro/page_content/home/widgets/home_image.dart';
-import 'package:medico_lavoro/page_content/home/widgets/home_title.dart';
 import 'package:medico_lavoro/page_content/servizi/widgets/griglia_servizi.dart';
-import 'package:medico_lavoro/utils/common_widgets/common_filled_button.dart';
 import 'package:medico_lavoro/utils/theme.dart';
-import 'package:responsive_framework/responsive_framework.dart';
 
-import '../../footer/footer.dart';
+import '../../base_layout/footer/footer.dart';
 import '../../utils/breakpoint_utils.dart';
 
 class ServiziContent extends StatelessWidget {

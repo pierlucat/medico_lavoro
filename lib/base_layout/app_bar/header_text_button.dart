@@ -54,15 +54,7 @@ class HeaderTextButton extends StatelessWidget {
             child: Text(
               text,
               style: ThemeUtils.bodyText.copyWith(
-                fontSize: BreakpointUtils.getResponsiveValue<double>(
-                  context,
-                  [
-                    SizingUtils.bodyTextM,
-                    SizingUtils.bodyTextS,
-                    SizingUtils.bodyTextM,
-                    SizingUtils.bodyTextL,
-                  ],
-                ),
+                fontSize: SizingUtils.bodyTextL,
                 color: isActive ? Color(ColorUtils.primaryColor) : Colors.black,
               ),
             ),

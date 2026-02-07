@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:medico_lavoro/page_content/our_services/widgets/accordion_entry.dart';
-import 'package:medico_lavoro/page_content/our_services/widgets/accordion_group.dart';
+import 'package:medico_lavoro/utils/common_widgets/accordion/accordion_entry.dart';
+import 'package:medico_lavoro/utils/common_widgets/accordion/accordion_group.dart';
 import 'package:medico_lavoro/utils/theme.dart';
 
 class LegislazioneLista extends StatelessWidget {
