@@ -62,7 +62,7 @@ class SizingUtils {
   static const double bodyTextS = 12;
   static const double bodyTextXS = 12;
 
-  static const double footerTitleTextL = 18;
+  static const double footerTitleTextL = 21;
   static const double footerTitleTextM = 16;
   static const double footerTitleTextS = 14;
   static const double footerTitleTextXS = 14;
@@ -71,6 +71,9 @@ class SizingUtils {
   static const double accordionTitleTextM = 27;
   static const double accordionTitleTextS = 22;
   static const double accordionTitleTextXS = 17;
+
+  static const double radiusCircle = 25;
+  static const double radiusRectangle = 10;
 
   static Widget spacerFunc(BuildContext context) {
     return SizedBox(

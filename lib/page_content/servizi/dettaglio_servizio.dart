@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:medico_lavoro/page_content/servizi/widgets/griglia_servizi.dart';
 
-import '../../footer/footer.dart';
+import '../../base_layout/footer/footer.dart';
 import '../../utils/breakpoint_utils.dart';
 import '../../utils/theme.dart';
 import '../chi_siamo/widgets/chi_siamo_content_blocs.dart';

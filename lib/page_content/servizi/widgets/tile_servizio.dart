@@ -37,8 +37,8 @@ class _TileServizioState extends State<TileServizio> {
         transform:
             _isHovered ? (Matrix4.identity()..scale(1.05)) : Matrix4.identity(),
         child: Card(
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(SizingUtils.radiusCircle)),
           elevation: _isHovered ? 10 : 5,
           shadowColor: _isHovered ? const Color(0xFF8EB6DD) : Colors.black45,
           child: Padding(
@@ -53,6 +53,7 @@ class _TileServizioState extends State<TileServizio> {
                 Text(
                   widget.title,
                   textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 24),
                 ),
                 if (widget.button != null)
                   Expanded(

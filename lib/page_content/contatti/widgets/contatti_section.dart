@@ -1,8 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:medico_lavoro/page_content/home_page/section_4/widgets/s4_form.dart';
 import 'package:medico_lavoro/utils/theme.dart';
-
-import '../../contact_us/widgets/contact_us_form.dart';
 
 class ContattiSection extends StatelessWidget {
   const ContattiSection({super.key});
@@ -103,7 +102,7 @@ class FormSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(15.0),
-      child: ContactUsForm(),
+      child: S4Form(),
     );
   }
 }

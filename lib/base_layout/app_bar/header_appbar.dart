@@ -108,20 +108,14 @@ class HeaderLogo extends StatelessWidget {
     return Row(
       children: [
         Text(
-          'Studio Toscanetti',
+          'Studio De Stefani Tecchio',
           style: ThemeUtils.title.copyWith(
-            fontSize: BreakpointUtils.getResponsiveValue(
-              context,
-              [20, 20, 25, 30],
-            ),
+            fontSize: 30,
           ),
         ),
         SizedBox(width: 10),
         Container(
-          height: BreakpointUtils.getResponsiveValue(
-            context,
-            [22, 22, 27, 32],
-          ),
+          height: 32,
           width: 2,
           color: Color(ColorUtils.accentColor),
         ),
@@ -129,10 +123,7 @@ class HeaderLogo extends StatelessWidget {
         Text(
           'Medicina del lavoro',
           style: ThemeUtils.subtitle.copyWith(
-            fontSize: BreakpointUtils.getResponsiveValue(
-              context,
-              [14, 14, 16, 18],
-            ),
+            fontSize: 18,
           ),
         ),
       ],
@@ -184,21 +175,13 @@ class HeaderActions extends StatelessWidget {
           pageName: '/contatti',
         ),
         SizedBox(
-          width: BreakpointUtils.getResponsiveValue(
-            context,
-            [
-              SizingUtils.leftRightMarginXS,
-              SizingUtils.leftRightMarginS,
-              SizingUtils.leftRightMarginM,
-              SizingUtils.leftRightMarginL
-            ],
-          ),
+          width: 10,
         ),
       ],
     );
   }
 
   double getWidth(BuildContext context) {
-    return BreakpointUtils.getResponsiveValue(context, [10, 10, 20, 20]);
+    return 20;
   }
 }

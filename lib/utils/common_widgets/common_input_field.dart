@@ -35,14 +35,14 @@ class CommonInputField extends StatelessWidget {
         ),
         hintText: label,
         focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(25),
+          borderRadius: BorderRadius.circular(SizingUtils.radiusRectangle),
           borderSide: BorderSide(
             width: 1,
             color: Color(ColorUtils.accentColor),
           ),
         ),
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(25),
+          borderRadius: BorderRadius.circular(SizingUtils.radiusRectangle),
           borderSide: BorderSide(
             width: 0.5,
             color: Color(ColorUtils.accentColor),

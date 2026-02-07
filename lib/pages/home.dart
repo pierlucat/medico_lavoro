@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:medico_lavoro/page_content/home_page/section_3/home_page_section_3.dart';
+import 'package:medico_lavoro/page_content/home_page/section_4/home_page_section_4.dart';
 
-import '../footer/footer.dart';
-import '../page_content/contact_us/contact_us.dart';
-import '../page_content/home/home_content.dart';
-import '../page_content/our_place/our_place.dart';
-import '../page_content/our_services/our_services.dart';
+import '../base_layout/footer/footer.dart';
+import '../page_content/home_page/section_1/home_page_section_1.dart';
+import '../page_content/home_page/section_2/home_page_section_2.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -14,10 +14,10 @@ class Home extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(
         children: [
-          HomeContent(),
-          OurServices(),
-          OurPlace(),
-          ContactUs(),
+          HomePageSection1(),
+          HomePageSection2(),
+          HomePageSection3(),
+          HomePageSection4(),
           Footer(),
         ],
       ),
