@@ -31,7 +31,15 @@ class IndicazioniSection extends StatelessWidget {
         RigaContatti(
           icon: CupertinoIcons.mail,
           title: "Mail",
-          subtitle: "info@medilavoro.it",
+          subtitle: "drtecchiomatteo@gmail.com",
+        ),
+        SizedBox(
+          height: 40,
+        ),
+        RigaContatti(
+          icon: CupertinoIcons.mail,
+          title: "Mail",
+          subtitle: "m.destefani.mdl@gmail.com",
         ),
         SizedBox(
           height: 40,
@@ -39,7 +47,7 @@ class IndicazioniSection extends StatelessWidget {
         RigaContatti(
           icon: CupertinoIcons.placemark,
           title: "Indirizzo",
-          subtitle: "Via Esempio 123, Città, CAP",
+          subtitle: "Via Magellano, 8, Creazzo (VI)",
         ),
         SizedBox(
           height: 40,
@@ -58,6 +66,7 @@ class RigaContatti extends StatelessWidget {
   final IconData icon;
   final String title;
   final String subtitle;
+
   const RigaContatti({
     super.key,
     required this.icon,
@@ -68,6 +77,8 @@ class RigaContatti extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      crossAxisAlignment: CrossAxisAlignment
+          .start, // Allinea l'icona in alto se il testo va su più righe
       children: [
         ClipRRect(
           borderRadius: BorderRadius.circular(50),
@@ -83,11 +94,17 @@ class RigaContatti extends StatelessWidget {
           ),
         ),
         SizedBox(width: 15),
+        // MODIFICA QUI: Expanded avvolge la Column
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(title, style: ThemeUtils.contentBold),
-            Text(subtitle, style: ThemeUtils.content),
+            Text(
+              subtitle,
+              style: ThemeUtils.content,
+              // Opzionale: gestisce overflow se proprio non ci sta neanche a capo
+              softWrap: true,
+            ),
           ],
         )
       ],

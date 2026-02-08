@@ -14,10 +14,6 @@ const tileMap = {
       'assets/documentazione_sanitaria_.png',
   'Formazione e Informazione dei Lavoratori':
       'assets/formazione_lavoratori_.png',
-  'Segnalazione al Datore di Lavoro di Rischi Specifici':
-      'assets/rischi_specifici_.png',
-  'Proposte su Idoneità, Reintegro, Cambio Mansione':
-      'assets/proposte_idoneità_.png',
 };
 
 class GrigliaServizi extends StatelessWidget {
@@ -26,6 +22,7 @@ class GrigliaServizi extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Wrap(
+      alignment: WrapAlignment.center,
       spacing: 20,
       runSpacing: 20,
       children: [
@@ -34,6 +31,7 @@ class GrigliaServizi extends StatelessWidget {
               (e) => TileServizio(
                 title: e,
                 image: tileMap[e]!,
+                height: 300,
               ),
             )
             .toList()

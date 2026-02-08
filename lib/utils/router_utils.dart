@@ -4,6 +4,9 @@ import 'package:go_router/go_router.dart';
 import 'package:medico_lavoro/pages/home.dart';
 
 import '../base_layout/base_layout.dart';
+import '../page_content/pages_lvl_2/servizi/attivita_aggiuntive_medicina_lavoro.dart';
+import '../page_content/pages_lvl_2/servizi/collaborazione_alla_valutazione_dei_rischi.dart';
+import '../page_content/pages_lvl_2/servizi/sorveglianza_sanitaria.dart';
 import '../page_content/servizi/dettaglio_servizio.dart';
 import '../pages/chi_siamo.dart';
 import '../pages/contatti.dart';
@@ -60,6 +63,34 @@ class GoRouterUtils {
                     image: immagine,
                     description: descrizione,
                   );
+                },
+              ),
+              GoRoute(
+                path: 'sorveglianza-sanitaria',
+                builder: (context, state) {
+                  // Opzionale: aggiorna il PageNotifier se vuoi evidenziare il menu servizi
+                  WidgetsBinding.instance.addPostFrameCallback((_) {
+                    PageNotifier.currentPage.value = '/servizi';
+                  });
+                  return const SorveglianzaSanitaria();
+                },
+              ),
+              GoRoute(
+                path: 'collaborazione-valutazione-rischi',
+                builder: (context, state) {
+                  WidgetsBinding.instance.addPostFrameCallback((_) {
+                    PageNotifier.currentPage.value = '/servizi';
+                  });
+                  return const CollaborazioneValutazioneRischi();
+                },
+              ),
+              GoRoute(
+                path: 'attivita-aggiuntive-medicina-lavoro',
+                builder: (context, state) {
+                  WidgetsBinding.instance.addPostFrameCallback((_) {
+                    PageNotifier.currentPage.value = '/servizi';
+                  });
+                  return const AttivitaAggiuntiveMedicinaLavoro();
                 },
               ),
             ],

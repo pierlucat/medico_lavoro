@@ -37,7 +37,7 @@ class LegislazioneParagrafi extends StatelessWidget {
                       ),
                     ),
                     child: Text(
-                        'Studio Toscanetti offre i propri servizi ad enti, associazioni, amministrazioni comunali, case di riposo, cliniche private, ospedali, istituti bancari, P.M.I. (Piccole e Medie Imprese), S.P.A. (Società per Azioni), la propria collaborazione e assistenza completa per l’espletamento e la regolarizzazione agli obblighi di legge.'),
+                        'Studio Medico De Stefani Tecchio offre i propri servizi ad enti pubblici e privati la propria collaborazione e assistenza completa per l\'espletamento e la regolarizzazione degli obbilighi di legge in termini di salute e sicurezza sul lavoro.'),
                   ),
                   Container(
                     padding: EdgeInsets.all(20),
@@ -57,7 +57,7 @@ class LegislazioneParagrafi extends StatelessWidget {
                       ),
                     ),
                     child: Text(
-                        'Studio Toscanetti con le sue sedi dislocate a Thiene e Vicenza opera principalmente in tutto il territorio veneto affermandosi nelle provincie di Padova, Vicenza, Rovigo e Verona, oltre a seguire realtà di primo piano anche al di fuori dei confini regionali.'),
+                        'Studio De Stefani Tecchio opera principalmente in tutto il territorio veneto affermandosi nelle province di Vicenza, Padova, Rovigo e Verona oltre a seguire realtá di primo piano anche al di fuori dei confini regionali.'),
                   ),
                 ],
               ),
@@ -89,7 +89,7 @@ class LegislazioneParagrafi extends StatelessWidget {
                       ),
                     ),
                     child: Text(
-                        'Studio Toscanetti è una società di consulenza per la sicurezza sul lavoro, costituita da un pool di professionisti altamente specializzati e con pluriennale esperienza nei settori della medicina del lavoro, che utilizza risorse e mezzi di alto livello tecnologico, in grado di rispondere a tutte le necessità di adeguamento alle normative vigenti, sviluppando le proprie competenze della Sicurezza e Salute nei luoghi di Lavoro e nella tutela Ambientale.'),
+                        'Studio De Steafni Tecchio è una società di consulenza per la sicurezza sul lavoro, costituita da un pool di professionisti altamente specializzati e con pluriennale esperienza nei settori della medicina del lavoro, che utilizza risorse e mezzi di alto livello tecnologico, in grado di rispondere a tutte le necessità di adeguamento alle normative vigenti, sviluppando le proprie competenze della Sicurezza e Salute nei luoghi di Lavoro e nella tutela Ambientale.'),
                   ),
                   Container(
                     padding: EdgeInsets.all(20),
@@ -109,19 +109,19 @@ class LegislazioneParagrafi extends StatelessWidget {
                       ),
                     ),
                     child: Text(
-                        'In relazione al decreto legislativo sulla sicurezza sul lavoro del 9 aprile 2008 con le sue successive correzioni ed integrazioni (tra cui il con il D. Lgs. 106/09), Studio Toscanetti è in grado di rispondere ad ogni vostro quesito e ad ogni vostra esigenza.'),
+                        'In relazione al decreto legislativo sulla sicurezza sul lavoro del 9 aprile 2008 con le sue successive correzioni ed integrazioni (tra cui il con il D. Lgs. 106/09), Studio De Stefani Tecchio è in grado di rispondere ad ogni vostro quesito e ad ogni vostra esigenza.'),
                   ),
                 ],
               ),
             ),
           ],
         ),
-        SizedBox(
-          height: 100,
-        ),
-        Text(
-          'Una lista degli articoli tratti dai decreti summenzionati, che rappresentano una parte dei servizi che noi offriamo, sono elencati qui in seguito:',
-        ),
+        // SizedBox(
+        //   height: 100,
+        // ),
+        // Text(
+        //   'Una lista degli articoli tratti dai decreti summenzionati, che rappresentano una parte dei servizi che noi offriamo, sono elencati qui in seguito:',
+        // ),
       ],
     );
   }

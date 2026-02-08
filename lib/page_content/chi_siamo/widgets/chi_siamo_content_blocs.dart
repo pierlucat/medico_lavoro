@@ -41,48 +41,6 @@ class ChiSiamoTitle extends StatelessWidget {
             [
               SizingUtils.spaceXS,
               SizingUtils.spaceS,
-              SizingUtils.spaceS,
-              SizingUtils.spaceS,
-            ],
-          ),
-        ),
-        RichText(
-          text: TextSpan(
-            style: ThemeUtils.bodyTextFunc(context).copyWith(
-              height: 1.5,
-            ),
-            children: [
-              TextSpan(
-                text: 'Le prestazioni sono pianificate sulla base della ',
-              ),
-              TextSpan(
-                text: 'valutazione dei rischi aziendali ',
-                style: TextStyle(fontWeight: FontWeight.bold),
-              ),
-              TextSpan(
-                text: 'e ',
-              ),
-              TextSpan(
-                text: 'integrate nei processi decisionali delle imprese',
-                style: TextStyle(fontWeight: FontWeight.bold),
-              ),
-              TextSpan(
-                text:
-                    ' con un approccio proattivo alla prevenzione e alla gestione della sorveglianza sanitaria.\n',
-              ),
-              TextSpan(
-                text:
-                    'Il Medico Competente opera in sinergia con tutte le figure previste dal sistema di prevenzione aziendale (RSPP, ASPP, RLS, datore di lavoro), garantendo supporto costante e interventi mirati.',
-              ),
-            ],
-          ),
-        ),
-        SizedBox(
-          height: BreakpointUtils.getResponsiveValue(
-            context,
-            [
-              SizingUtils.spaceXS,
-              SizingUtils.spaceS,
               SizingUtils.spaceM,
               SizingUtils.spaceL,
             ],
@@ -92,48 +50,34 @@ class ChiSiamoTitle extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             TileServizio(
-              title: "Sorveglianza sanitaria e idoneità al lavoro",
-              image: 'assets/programma_prevenzione_.png',
+              title: "Sorveglianza Sanitaria e Idoneità al Lavoro",
+              image: 'assets/sorveglianza_sanitaria_.png',
               width: 350,
               height: 400,
               button: CommonFilledButton(
                 text: 'Scopri',
                 textColor: Colors.white,
                 callBack: () {
-                  context.go(
-                    '/servizi/dettaglio-servizio',
-                    extra: {
-                      'titolo': 'Sorveglianza sanitaria e idoneità al lavoro',
-                      'immagine': 'immagine_url',
-                      'descrizione': 'Descrizione del servizio',
-                    },
-                  );
+                  context.go('/servizi/sorveglianza-sanitaria');
                 },
               ),
             ),
             TileServizio(
-              title: "Valutazione e gestione dei rischi",
-              image: 'assets/programma_prevenzione_.png',
+              title: "Collaborazione alla Valutazione dei Rischi",
+              image: 'assets/sopralluoghi_.png',
               width: 350,
               height: 400,
               button: CommonFilledButton(
                 text: 'Scopri',
                 textColor: Colors.white,
                 callBack: () {
-                  context.go(
-                    '/servizi/dettaglio-servizio',
-                    extra: {
-                      'titolo': 'Valutazione e gestione dei rischi',
-                      'immagine': 'immagine_url',
-                      'descrizione': 'Descrizione del servizio',
-                    },
-                  );
+                  context.go('/servizi/collaborazione-valutazione-rischi');
                 },
               ),
             ),
             TileServizio(
-              title: "Prevenzione e consulenza normativa",
-              image: 'assets/programma_prevenzione_.png',
+              title: "Consulenza Medica Aziendale",
+              image: 'assets/collaboratori_sicurezza_.png',
               width: 350,
               height: 400,
               // button: CommonFilledButton(
@@ -152,22 +96,15 @@ class ChiSiamoTitle extends StatelessWidget {
               // ),
             ),
             TileServizio(
-              title: "Ergonomia e benessere sul lavoro",
-              image: 'assets/programma_prevenzione_.png',
+              title: "Attività Aggiuntive di Medicina del Lavoro",
+              image: 'assets/riunioni_periodiche_.png',
               width: 350,
               height: 400,
               button: CommonFilledButton(
                 text: 'Scopri',
                 textColor: Colors.white,
                 callBack: () {
-                  context.go(
-                    '/servizi/dettaglio-servizio',
-                    extra: {
-                      'titolo': 'Ergonomia e benessere sul lavoro',
-                      'immagine': 'immagine_url',
-                      'descrizione': 'Descrizione del servizio',
-                    },
-                  );
+                  context.go('/servizi/attivita-aggiuntive-medicina-lavoro');
                 },
               ),
             ),
@@ -179,42 +116,8 @@ class ChiSiamoTitle extends StatelessWidget {
             [
               SizingUtils.spaceXS,
               SizingUtils.spaceS,
-              SizingUtils.spaceM,
-              SizingUtils.spaceL,
-            ],
-          ),
-        ),
-        RichText(
-          text: TextSpan(
-            style: ThemeUtils.bodyTextFunc(context).copyWith(
-              height: 1.5,
-            ),
-            children: [
-              TextSpan(
-                text: 'Tutti i servizi sono ',
-              ),
-              TextSpan(
-                text: 'tracciabili',
-                style: TextStyle(fontWeight: FontWeight.bold),
-              ),
-              TextSpan(
-                text: ', ',
-              ),
-              TextSpan(
-                text: 'documentati',
-                style: TextStyle(fontWeight: FontWeight.bold),
-              ),
-              TextSpan(
-                text: ' e ',
-              ),
-              TextSpan(
-                text: 'modulabili',
-                style: TextStyle(fontWeight: FontWeight.bold),
-              ),
-              TextSpan(
-                text:
-                    ' in base alla specificità dei comparti produttivi, con attenzione agli aggiornamenti legislativi, alla qualità dei protocolli sanitari e all’efficacia delle misure adottate.',
-              ),
+              SizingUtils.spaceS,
+              SizingUtils.spaceS,
             ],
           ),
         ),
@@ -324,7 +227,7 @@ class ChiSiamoSubtitle extends StatelessWidget {
                 SizingUtils.spaceXS,
                 SizingUtils.spaceS,
                 SizingUtils.spaceM,
-                SizingUtils.spaceL,
+                SizingUtils.spaceM,
               ],
             ),
           ),
@@ -348,7 +251,7 @@ class ChiSiamoSubtitle extends StatelessWidget {
                 SizingUtils.spaceXS,
                 SizingUtils.spaceS,
                 SizingUtils.spaceM,
-                SizingUtils.spaceL,
+                SizingUtils.spaceM,
               ],
             ),
           ),

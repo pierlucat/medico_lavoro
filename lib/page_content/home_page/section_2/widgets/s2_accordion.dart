@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:medico_lavoro/utils/common_widgets/accordion/accordion_entry.dart';
 import 'package:medico_lavoro/utils/common_widgets/accordion/accordion_group.dart';
 import 'package:medico_lavoro/utils/theme.dart';
@@ -38,7 +39,9 @@ class S2Accordion extends StatelessWidget {
                       height: 20,
                     ),
                     InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        context.go('/servizi/sorveglianza-sanitaria');
+                      },
                       child: Text(
                         'Maggiori Informazioni',
                         style: getLinkTextStyle(context),
@@ -67,7 +70,10 @@ class S2Accordion extends StatelessWidget {
                       height: 20,
                     ),
                     InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        context
+                            .go('/servizi/collaborazione-valutazione-rischi');
+                      },
                       child: Text(
                         'Maggiori Informazioni',
                         style: getLinkTextStyle(context),
@@ -99,16 +105,6 @@ class S2Accordion extends StatelessWidget {
                       'Aiutiamo le aziende nella gestione degli eventuali casi complessi con soluzioni che permettano il rispetto e la tutela della salute del lavoratore con le diverse necessitá aziendali.',
                       style: getWidgetTextStyle(context),
                     ),
-                    // SizedBox(
-                    //   height: 20,
-                    // ),
-                    // InkWell(
-                    //   onTap: () {},
-                    //   child: Text(
-                    //     'Maggiori Informazioni',
-                    //     style: getLinkTextStyle(context),
-                    //   ),
-                    // ),
                   ],
                 ),
               ),
@@ -139,7 +135,10 @@ class S2Accordion extends StatelessWidget {
                       height: 20,
                     ),
                     InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        context
+                            .go('/servizi/attivita-aggiuntive-medicina-lavoro');
+                      },
                       child: Text(
                         'Maggiori Informazioni',
                         style: getLinkTextStyle(context),

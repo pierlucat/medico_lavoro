@@ -51,11 +51,15 @@ class Footer extends StatelessWidget {
                           height: 10,
                         ),
                         Text(
-                          "Toscanetti s.l.r.",
+                          "Studio De Stefani Tecchio",
                           style: TextStyle(
                             fontSize: SizingUtils.bodyTextL,
                             color: Color(ColorUtils.footerText),
+                            fontWeight: FontWeight.bold,
                           ),
+                        ),
+                        SizedBox(
+                          height: 10,
                         ),
                         Text(
                           "Ci impegnamo ogni giorno per garantire la vostra sicurezza e la sicurezza dei vostri dipendenti.",
@@ -154,14 +158,7 @@ class Footer extends StatelessWidget {
                           height: 10,
                         ),
                         Text(
-                          "- Contrà Porta Santa Croce, 38, 36100 (VI)",
-                          style: TextStyle(
-                            fontSize: SizingUtils.bodyTextL,
-                            color: Color(ColorUtils.footerText),
-                          ),
-                        ),
-                        Text(
-                          "- Stradella del Garofolino, 12, 36100 (VI)",
+                          "- Via Magellano, 8, 36051 Creazzo (VI)",
                           style: TextStyle(
                             fontSize: SizingUtils.bodyTextL,
                             color: Color(ColorUtils.footerText),

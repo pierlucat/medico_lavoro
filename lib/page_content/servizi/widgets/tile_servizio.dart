@@ -50,10 +50,12 @@ class _TileServizioState extends State<TileServizio> {
                   height: 150,
                   width: 150,
                 ),
-                Text(
-                  widget.title,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 24),
+                Expanded(
+                  child: Text(
+                    widget.title,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 24),
+                  ),
                 ),
                 if (widget.button != null)
                   Expanded(

@@ -15,12 +15,8 @@ class _ContattiMapState extends State<ContattiMap> {
   int selectedIndex = 0; // Tracks the selected ListTile
   final List<Map<String, String>> locations = [
     {
-      'title': 'Studio A',
-      'subtitle': 'Via Roma, 123, 00100 Roma',
-    },
-    {
-      'title': 'Studio B',
-      'subtitle': 'Corso Palladio, 15, 36100, Vicenza',
+      'title': 'Studio De Stefani Tecchio',
+      'subtitle': 'Via Magellano, 8, 36051 Creazzo (VI)',
     },
   ];
 
@@ -43,6 +39,7 @@ class _ContattiMapState extends State<ContattiMap> {
           child: Padding(
             padding: const EdgeInsets.all(15.0),
             child: Row(
+              mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Column(

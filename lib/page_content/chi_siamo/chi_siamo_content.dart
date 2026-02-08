@@ -37,7 +37,7 @@ class ChiSiamoContent extends StatelessWidget {
                       ),
                     ),
                     SizedBox(
-                      height: SizingUtils.spaceL,
+                      height: SizingUtils.spaceM,
                     ),
                     // Row(
                     //   crossAxisAlignment: CrossAxisAlignment.center,
