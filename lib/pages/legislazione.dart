@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 
 import '../base_layout/footer/footer.dart';
 import '../page_content/legislazione/widgets/legislazione_content.dart';
@@ -20,15 +21,7 @@ class Legislazione extends StatelessWidget {
               child: Center(
                 child: Container(
                   padding: EdgeInsets.symmetric(
-                    horizontal: BreakpointUtils.getResponsiveValue(
-                      context,
-                      [
-                        SizingUtils.leftRightMarginXS,
-                        SizingUtils.leftRightMarginS,
-                        SizingUtils.leftRightMarginM,
-                        SizingUtils.leftRightMarginL
-                      ],
-                    ),
+                    horizontal: SizingUtils.leftRightMarginL,
                   ),
                   child: ConstrainedBox(
                     constraints: BoxConstraints(
@@ -36,35 +29,22 @@ class Legislazione extends StatelessWidget {
                     ),
                     child: Column(
                       children: [
+                        SizedBox(
+                          height: 100,
+                        ),
                         Text(
                           textAlign: TextAlign.center,
-                          'Il contesto normativo',
+                          'Il Contesto Normativo',
                           style: ThemeUtils.sectionContentTitle.copyWith(
-                            fontSize: BreakpointUtils.getResponsiveValue(
-                              context,
-                              [
-                                SizingUtils.sectionContentTitleXS,
-                                SizingUtils.sectionContentTitleS,
-                                SizingUtils.sectionContentTitleM,
-                                SizingUtils.sectionContentTitleL
-                              ],
-                            ),
+                            fontSize: SizingUtils.sectionContentTitleL,
                           ),
                         ),
                         SizedBox(
-                          height: BreakpointUtils.getResponsiveValue(
-                            context,
-                            [
-                              SizingUtils.spaceXS,
-                              SizingUtils.spaceS,
-                              SizingUtils.spaceM,
-                              SizingUtils.spaceL,
-                            ],
-                          ),
+                          height: SizingUtils.spaceL,
                         ),
                         LegislazioneParagrafi(),
                         SizedBox(
-                          height: 50,
+                          height: 100,
                         ),
                       ],
                     ),
@@ -76,10 +56,16 @@ class Legislazione extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(
-                  height: 50,
+                  height: 100,
                 ),
-                Text(
-                  'Una lista degli articoli tratti dai decreti summenzionati, che rappresentano una parte dei servizi che noi offriamo, sono elencati qui in seguito:',
+                Padding(
+                  padding: ResponsiveBreakpoints.of(context).isMobile
+                      ? const EdgeInsets.symmetric(horizontal: 10.0)
+                      : EdgeInsets.zero,
+                  child: Text(
+                    'Una lista degli articoli tratti dai decreti summenzionati, che rappresentano una parte dei servizi che noi offriamo, sono elencati qui in seguito:',
+                    style: TextStyle(fontSize: SizingUtils.bodyTextL),
+                  ),
                 ),
                 SizedBox(
                   height: 50,
@@ -95,7 +81,7 @@ class Legislazione extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  height: 50,
+                  height: 100,
                 ),
               ],
             ),

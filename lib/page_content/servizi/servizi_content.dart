@@ -22,15 +22,7 @@ class ServiziContent extends StatelessWidget {
           child: Center(
             child: Container(
               padding: EdgeInsets.symmetric(
-                horizontal: BreakpointUtils.getResponsiveValue(
-                  context,
-                  [
-                    SizingUtils.leftRightMarginXS,
-                    SizingUtils.leftRightMarginS,
-                    SizingUtils.leftRightMarginM,
-                    SizingUtils.leftRightMarginL
-                  ],
-                ),
+                horizontal: SizingUtils.leftRightMarginL,
                 vertical: SizingUtils.spaceValueFunc(context),
               ),
               child: ConstrainedBox(
@@ -43,27 +35,11 @@ class ServiziContent extends StatelessWidget {
                       textAlign: TextAlign.center,
                       'Servizi Integrati di Medicina del Lavoro e Sorveglianza Sanitaria',
                       style: ThemeUtils.sectionContentTitle.copyWith(
-                        fontSize: BreakpointUtils.getResponsiveValue(
-                          context,
-                          [
-                            SizingUtils.sectionContentTitleXS,
-                            SizingUtils.sectionContentTitleS,
-                            SizingUtils.sectionContentTitleM,
-                            SizingUtils.sectionContentTitleL
-                          ],
-                        ),
+                        fontSize: SizingUtils.sectionContentTitleL,
                       ),
                     ),
                     SizedBox(
-                      height: BreakpointUtils.getResponsiveValue(
-                        context,
-                        [
-                          SizingUtils.spaceXS,
-                          SizingUtils.spaceS,
-                          SizingUtils.spaceM,
-                          SizingUtils.spaceL,
-                        ],
-                      ),
+                      height: SizingUtils.spaceL,
                     ),
                     ChiSiamoTitle(),
                   ],
@@ -77,15 +53,7 @@ class ServiziContent extends StatelessWidget {
           child: Center(
             child: Container(
               padding: EdgeInsets.symmetric(
-                horizontal: BreakpointUtils.getResponsiveValue(
-                  context,
-                  [
-                    SizingUtils.leftRightMarginXS,
-                    SizingUtils.leftRightMarginS,
-                    SizingUtils.leftRightMarginS,
-                    SizingUtils.leftRightMarginS
-                  ],
-                ),
+                horizontal: SizingUtils.leftRightMarginS,
                 vertical: SizingUtils.spaceValueFunc(context),
               ),
               child: ConstrainedBox(
@@ -128,15 +96,7 @@ class ServiziContent extends StatelessWidget {
                       ),
                     ),
                     SizedBox(
-                      height: BreakpointUtils.getResponsiveValue(
-                        context,
-                        [
-                          SizingUtils.spaceXS,
-                          SizingUtils.spaceS,
-                          SizingUtils.spaceM,
-                          SizingUtils.spaceS,
-                        ],
-                      ),
+                      height: SizingUtils.spaceS,
                     ),
                     RichText(
                       text: TextSpan(
@@ -181,15 +141,7 @@ class ServiziContent extends StatelessWidget {
         Center(
           child: Container(
             padding: EdgeInsets.symmetric(
-              horizontal: BreakpointUtils.getResponsiveValue(
-                context,
-                [
-                  SizingUtils.leftRightMarginXS,
-                  SizingUtils.leftRightMarginS,
-                  SizingUtils.leftRightMarginS,
-                  SizingUtils.leftRightMarginS
-                ],
-              ),
+              horizontal: SizingUtils.leftRightMarginS,
               // vertical: SizingUtils.spaceValueFunc(context),
             ),
             child: ConstrainedBox(

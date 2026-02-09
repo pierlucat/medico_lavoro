@@ -12,7 +12,7 @@ class S2Accordion extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         border: Border(
-          top: BorderSide(width: 1),
+          top: BorderSide(width: 1, color: Colors.black38),
         ),
       ),
       child: Column(
@@ -51,7 +51,7 @@ class S2Accordion extends StatelessWidget {
                 ),
               ),
               AccordionEntry(
-                title: 'Collaborazine alla Valutazione dei Rischi',
+                title: 'Collaborazione alla Valutazione dei Rischi',
                 text: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -109,7 +109,7 @@ class S2Accordion extends StatelessWidget {
                 ),
               ),
               AccordionEntry(
-                title: 'Attività Aggiungtive di Medicina del Lavoro',
+                title: 'Attività Aggiuntive di Medicina del Lavoro',
                 text: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [

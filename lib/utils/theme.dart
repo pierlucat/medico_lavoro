@@ -29,11 +29,6 @@ class ColorUtils {
 }
 
 class SizingUtils {
-  //XS -> mobile
-  //S -> tablet
-  //M -> tablet/desktop finestra piccola
-  //L -> desktop finestra grande
-
   static const double spaceL = 100;
   static const double spaceM = 50;
   static const double spaceS = 30;
@@ -52,12 +47,12 @@ class SizingUtils {
   static const double topBarHeightL = 100;
 
   //font size
-  static const double sectionContentTitleL = 70;
+  static const double sectionContentTitleL = 80;
   static const double sectionContentTitleM = 50;
   static const double sectionContentTitleS = 40;
   static const double sectionContentTitleXS = 30;
 
-  static const double bodyTextL = 16;
+  static const double bodyTextL = 21;
   static const double bodyTextM = 14;
   static const double bodyTextS = 12;
   static const double bodyTextXS = 12;
@@ -77,28 +72,12 @@ class SizingUtils {
 
   static Widget spacerFunc(BuildContext context) {
     return SizedBox(
-      height: BreakpointUtils.getResponsiveValue<double>(
-        context,
-        [
-          SizingUtils.spaceXS,
-          SizingUtils.spaceS,
-          SizingUtils.spaceM,
-          SizingUtils.spaceL,
-        ],
-      ),
+      height: SizingUtils.spaceL,
     );
   }
 
   static double spaceValueFunc(BuildContext context) {
-    return BreakpointUtils.getResponsiveValue<double>(
-      context,
-      [
-        SizingUtils.spaceXS,
-        SizingUtils.spaceS,
-        SizingUtils.spaceM,
-        SizingUtils.spaceL,
-      ],
-    );
+    return SizingUtils.spaceL;
   }
 }
 
@@ -141,84 +120,36 @@ class ThemeUtils {
       );
   static TextStyle bodyTextFunc(BuildContext context) {
     return TextStyle(
-      fontSize: BreakpointUtils.getResponsiveValue<double>(
-        context,
-        [
-          SizingUtils.bodyTextXS,
-          SizingUtils.bodyTextS,
-          SizingUtils.bodyTextM,
-          SizingUtils.bodyTextL,
-        ],
-      ),
+      fontSize: SizingUtils.bodyTextL,
       color: Colors.black,
     );
   }
 
   static double bodyTextSizeFunc(BuildContext context) {
-    return BreakpointUtils.getResponsiveValue<double>(
-      context,
-      [
-        SizingUtils.bodyTextXS,
-        SizingUtils.bodyTextS,
-        SizingUtils.bodyTextM,
-        SizingUtils.bodyTextL,
-      ],
-    );
+    return SizingUtils.bodyTextL;
   }
 
   static TextStyle footerTitleTextFunc(BuildContext context) {
     return TextStyle(
-      fontSize: BreakpointUtils.getResponsiveValue<double>(
-        context,
-        [
-          SizingUtils.footerTitleTextXS,
-          SizingUtils.footerTitleTextS,
-          SizingUtils.footerTitleTextM,
-          SizingUtils.footerTitleTextL,
-        ],
-      ),
+      fontSize: SizingUtils.footerTitleTextL,
       color: Color(ColorUtils.footerText),
     );
   }
 
   static TextStyle footerBodyTextFunc(BuildContext context) {
     return TextStyle(
-      fontSize: BreakpointUtils.getResponsiveValue<double>(
-        context,
-        [
-          SizingUtils.bodyTextXS,
-          SizingUtils.bodyTextS,
-          SizingUtils.bodyTextM,
-          SizingUtils.bodyTextL,
-        ],
-      ),
+      fontSize: SizingUtils.bodyTextL,
       color: Color(ColorUtils.footerText),
     );
   }
 
   static double accordionIconSizeValue(BuildContext context) {
-    return BreakpointUtils.getResponsiveValue<double>(
-      context,
-      [
-        SizingUtils.accordionTitleTextXS,
-        SizingUtils.accordionTitleTextS,
-        SizingUtils.accordionTitleTextM,
-        SizingUtils.accordionTitleTextL,
-      ],
-    );
+    return SizingUtils.accordionTitleTextL;
   }
 
   static TextStyle accordionTitleTextSizeFunc(BuildContext context) {
     return TextStyle(
-      fontSize: BreakpointUtils.getResponsiveValue<double>(
-        context,
-        [
-          SizingUtils.accordionTitleTextXS,
-          SizingUtils.accordionTitleTextS,
-          SizingUtils.accordionTitleTextM,
-          SizingUtils.accordionTitleTextL,
-        ],
-      ),
+      fontSize: SizingUtils.accordionTitleTextL,
       color: Color(ColorUtils.accentColor),
     );
   }

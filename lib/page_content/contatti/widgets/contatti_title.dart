@@ -45,18 +45,7 @@ class ChiSiamoImage extends StatelessWidget {
       child: Image.asset(
         'assets/chi_siamo_1.jpg',
         //width: 800,
-        height: BreakpointUtils.getResponsiveValue(
-          context,
-          [
-            ResponsiveBreakpoints.of(context)
-                    .equals(BreakpointUtils.xsmall.name)
-                ? 250
-                : 350,
-            450,
-            450,
-            600,
-          ],
-        ),
+        height: 600,
         fit: BoxFit.fill,
       ),
     );
@@ -75,15 +64,7 @@ class ChiSiamoSubtitle extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox(
-            height: BreakpointUtils.getResponsiveValue(
-              context,
-              [
-                SizingUtils.spaceXS,
-                SizingUtils.spaceS,
-                SizingUtils.spaceM,
-                SizingUtils.spaceL,
-              ],
-            ),
+            height: SizingUtils.spaceL,
           ),
           RichText(
             text: TextSpan(
@@ -130,15 +111,7 @@ class ChiSiamoSubtitle extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: BreakpointUtils.getResponsiveValue(
-              context,
-              [
-                SizingUtils.spaceXS,
-                SizingUtils.spaceS,
-                SizingUtils.spaceM,
-                SizingUtils.spaceL,
-              ],
-            ),
+            height: SizingUtils.spaceL,
           ),
           RichText(
             text: TextSpan(
@@ -154,15 +127,7 @@ class ChiSiamoSubtitle extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: BreakpointUtils.getResponsiveValue(
-              context,
-              [
-                SizingUtils.spaceXS,
-                SizingUtils.spaceS,
-                SizingUtils.spaceM,
-                SizingUtils.spaceL,
-              ],
-            ),
+            height: SizingUtils.spaceL,
           ),
           RichText(
             text: TextSpan(
@@ -192,15 +157,7 @@ class ChiSiamoSubtitle extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: BreakpointUtils.getResponsiveValue(
-              context,
-              [
-                SizingUtils.spaceXS,
-                SizingUtils.spaceS,
-                SizingUtils.spaceM,
-                SizingUtils.spaceL,
-              ],
-            ),
+            height: SizingUtils.spaceL,
           ),
         ],
       ),

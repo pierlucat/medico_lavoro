@@ -25,7 +25,7 @@ class S2TitleDesc extends StatelessWidget {
         SizedBox(
           height: SizingUtils.spaceL,
         ),
-        ResponsiveBreakpoints.of(context).equals(BreakpointUtils.xsmall.name)
+        ResponsiveBreakpoints.of(context).equals(BreakpointUtils.mobile.name)
             ? SizedBox.shrink()
             : CommonFilledButton(
                 text: 'Approfondisci',

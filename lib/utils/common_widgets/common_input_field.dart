@@ -23,15 +23,7 @@ class CommonInputField extends StatelessWidget {
         filled: true,
         hintStyle: ThemeUtils.bodyText.copyWith(
           color: Colors.black38,
-          fontSize: BreakpointUtils.getResponsiveValue<double>(
-            context,
-            [
-              SizingUtils.bodyTextXS,
-              SizingUtils.bodyTextS,
-              SizingUtils.bodyTextM,
-              SizingUtils.bodyTextL,
-            ],
-          ),
+          fontSize: SizingUtils.bodyTextL,
         ),
         hintText: label,
         focusedBorder: OutlineInputBorder(

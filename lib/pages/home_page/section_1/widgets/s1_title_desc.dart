@@ -15,7 +15,7 @@ class S1TitleDesc extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Salute e Sicurezza al Lavoro',
+            'Salute e Sicurezza sul Lavoro',
             style: ThemeUtils.sectionContentTitle.copyWith(
               fontSize: SizingUtils.sectionContentTitleL,
             ),

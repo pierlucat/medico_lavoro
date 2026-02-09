@@ -10,7 +10,7 @@ const tileMap = {
   'Collaborazione con le Figure della Sicurezza':
       'assets/collaboratori_sicurezza_.png',
   'Partecipazione alle Riunioni Periodiche': 'assets/riunioni_periodiche_.png',
-  'Gestione la Documentazione Sanitaria':
+  'Gestione della Documentazione Sanitaria':
       'assets/documentazione_sanitaria_.png',
   'Formazione e Informazione dei Lavoratori':
       'assets/formazione_lavoratori_.png',
@@ -32,6 +32,7 @@ class GrigliaServizi extends StatelessWidget {
                 title: e,
                 image: tileMap[e]!,
                 height: 300,
+                fontSize: 18,
               ),
             )
             .toList()

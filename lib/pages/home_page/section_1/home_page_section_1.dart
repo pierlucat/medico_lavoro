@@ -3,8 +3,8 @@ import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:medico_lavoro/page_content/home_page/section_1/widgets/s1_image.dart';
-import 'package:medico_lavoro/page_content/home_page/section_1/widgets/s1_title_desc.dart';
+import 'package:medico_lavoro/pages/home_page/section_1/widgets/s1_image.dart';
+import 'package:medico_lavoro/pages/home_page/section_1/widgets/s1_title_desc.dart';
 import 'package:medico_lavoro/utils/theme.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
@@ -21,13 +21,18 @@ class HomePageSection1 extends StatelessWidget {
         child: Container(
           padding: EdgeInsets.symmetric(
             vertical: SizingUtils.spaceL,
+            horizontal: ResponsiveBreakpoints.of(context).isTablet
+                ? 40
+                : ResponsiveBreakpoints.of(context).isMobile
+                    ? 20
+                    : 100,
           ),
           child: ConstrainedBox(
             constraints: BoxConstraints(
               maxWidth: 1500,
             ),
             child: ResponsiveBreakpoints.of(context)
-                    .equals(BreakpointUtils.xsmall.name)
+                    .equals(BreakpointUtils.mobile.name)
                 ? _mobileView(context)
                 : _standardView(),
           ),

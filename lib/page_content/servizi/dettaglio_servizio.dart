@@ -26,15 +26,7 @@ class DettaglioServizio extends StatelessWidget {
           child: Center(
             child: Container(
               padding: EdgeInsets.symmetric(
-                horizontal: BreakpointUtils.getResponsiveValue(
-                  context,
-                  [
-                    SizingUtils.leftRightMarginXS,
-                    SizingUtils.leftRightMarginS,
-                    SizingUtils.leftRightMarginM,
-                    SizingUtils.leftRightMarginL
-                  ],
-                ),
+                horizontal: SizingUtils.leftRightMarginL,
                 vertical: SizingUtils.spaceValueFunc(context),
               ),
               child: ConstrainedBox(
@@ -47,27 +39,11 @@ class DettaglioServizio extends StatelessWidget {
                       textAlign: TextAlign.center,
                       title,
                       style: ThemeUtils.sectionContentTitle.copyWith(
-                        fontSize: BreakpointUtils.getResponsiveValue(
-                          context,
-                          [
-                            SizingUtils.sectionContentTitleXS,
-                            SizingUtils.sectionContentTitleS,
-                            SizingUtils.sectionContentTitleM,
-                            SizingUtils.sectionContentTitleL
-                          ],
-                        ),
+                        fontSize: SizingUtils.sectionContentTitleL,
                       ),
                     ),
                     SizedBox(
-                      height: BreakpointUtils.getResponsiveValue(
-                        context,
-                        [
-                          SizingUtils.spaceXS,
-                          SizingUtils.spaceS,
-                          SizingUtils.spaceM,
-                          SizingUtils.spaceL,
-                        ],
-                      ),
+                      height: SizingUtils.spaceL,
                     ),
                   ],
                 ),

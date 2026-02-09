@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:medico_lavoro/page_content/home_page/section_4/widgets/s4_form.dart';
+import 'package:medico_lavoro/pages/home_page/section_4/widgets/s4_form.dart';
 import 'package:medico_lavoro/utils/theme.dart';
 
 class ContattiSection extends StatelessWidget {
@@ -20,14 +20,14 @@ class IndicazioniSection extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        RigaContatti(
-          icon: CupertinoIcons.phone,
-          title: "Telefono",
-          subtitle: "+39 123 456 7890",
-        ),
-        SizedBox(
-          height: 40,
-        ),
+        // RigaContatti(
+        //   icon: CupertinoIcons.phone,
+        //   title: "Telefono",
+        //   subtitle: "+39 123 456 7890",
+        // ),
+        // SizedBox(
+        //   height: 40,
+        // ),
         RigaContatti(
           icon: CupertinoIcons.mail,
           title: "Mail",

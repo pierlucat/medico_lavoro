@@ -36,9 +36,7 @@ class ChiSiamoContent extends StatelessWidget {
                         fontSize: SizingUtils.sectionContentTitleL,
                       ),
                     ),
-                    SizedBox(
-                      height: SizingUtils.spaceM,
-                    ),
+
                     // Row(
                     //   crossAxisAlignment: CrossAxisAlignment.center,
                     //   children: [

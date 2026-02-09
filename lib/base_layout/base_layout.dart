@@ -15,13 +15,15 @@ class BaseLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       drawer:
-          ResponsiveBreakpoints.of(context).equals(BreakpointUtils.xsmall.name)
+          ResponsiveBreakpoints.of(context).equals(BreakpointUtils.mobile.name)
               ? HeaderDrawer()
               : null,
       appBar: AppBar(
+        elevation: 0,
+        toolbarHeight: 85,
         title: HeaderLogo(),
         actions: ResponsiveBreakpoints.of(context)
-                .equals(BreakpointUtils.xsmall.name)
+                .equals(BreakpointUtils.mobile.name)
             ? null
             : [
                 HeaderActions(),

@@ -65,7 +65,7 @@ class _AccordionEntryState extends State<AccordionEntry>
       padding: const EdgeInsets.symmetric(vertical: 10),
       decoration: BoxDecoration(
         border: Border(
-          bottom: BorderSide(width: 1),
+          bottom: BorderSide(width: 1, color: Colors.black38),
         ),
       ),
       child: Column(

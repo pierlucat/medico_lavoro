@@ -9,6 +9,7 @@ class TileServizio extends StatefulWidget {
   final double height;
   final double width;
   final Widget? button;
+  final double fontSize;
   const TileServizio({
     super.key,
     required this.title,
@@ -16,6 +17,7 @@ class TileServizio extends StatefulWidget {
     this.height = 230,
     this.width = 230,
     this.button,
+    this.fontSize = 24,
   });
 
   @override
@@ -35,7 +37,7 @@ class _TileServizioState extends State<TileServizio> {
         width: widget.width,
         duration: const Duration(milliseconds: 200),
         transform:
-            _isHovered ? (Matrix4.identity()..scale(1.05)) : Matrix4.identity(),
+            _isHovered ? (Matrix4.identity()..scale(1.02)) : Matrix4.identity(),
         child: Card(
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(SizingUtils.radiusCircle)),
@@ -50,11 +52,14 @@ class _TileServizioState extends State<TileServizio> {
                   height: 150,
                   width: 150,
                 ),
-                Expanded(
+                SizedBox(
+                  height: 20,
+                ),
+                Center(
                   child: Text(
                     widget.title,
                     textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 24),
+                    style: TextStyle(fontSize: widget.fontSize),
                   ),
                 ),
                 if (widget.button != null)

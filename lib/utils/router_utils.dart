@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:medico_lavoro/pages/home.dart';
+import 'package:medico_lavoro/pages/home_page/home.dart';
 
 import '../base_layout/base_layout.dart';
 import '../page_content/pages_lvl_2/servizi/attivita_aggiuntive_medicina_lavoro.dart';
