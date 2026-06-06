@@ -16,7 +16,7 @@ class _ContattiMapState extends State<ContattiMap> {
   final List<Map<String, String>> locations = [
     {
       'title': 'Studio De Stefani Tecchio',
-      'subtitle': 'Via Magellano, 8, 36051 Creazzo (VI)',
+      'subtitle': 'Via Magellano, 2, 36051 Creazzo (VI)',
     },
   ];
 
@@ -80,7 +80,7 @@ class _ContattiMapState extends State<ContattiMap> {
               googleApiKey: 'AIzaSyAinDj9Hd-suJIMSvJOW2WnCmEXyvbpQdI',
               width: requestWidth,
               height: requestHeight,
-              zoom: 15,
+              zoom: 18,
               scaleToDevicePixelRatio: true,
               visible: [
                 GeocodedLocation.address(locations[selectedIndex]['subtitle']!),
@@ -89,8 +89,7 @@ class _ContattiMapState extends State<ContattiMap> {
                 Marker(
                   locations: [
                     GeocodedLocation.latLng(
-                      45.31,
-                      11.29,
+                        45.52322010713363, 11.485968499793223,
                     )
                     // GeocodedLocation.address(
                     //     locations[selectedIndex]['subtitle']!),

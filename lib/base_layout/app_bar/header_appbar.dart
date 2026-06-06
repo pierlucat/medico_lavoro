@@ -13,41 +13,36 @@ class HeaderLogo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.blue,
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.end,
-        children: [
-          Text(
-            'Studio',
-            style: ThemeUtils.title.copyWith(
-              fontSize: 28,
-            ),
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.baseline,
+      textBaseline: TextBaseline.alphabetic,
+      children: [
+        Text(
+          'Studio',
+          style: ThemeUtils.title.copyWith(
+            fontSize: 28,
           ),
-          Container(
-            color: Colors.red,
-            child: Text(
-              ' De Stefani Tecchio',
-              style: ThemeUtils.title.copyWith(
-                fontSize: 36,
-              ),
-            ),
+        ),
+        Text(
+          ' De Stefani Tecchio',
+          style: ThemeUtils.title.copyWith(
+            fontSize: 36,
           ),
-          SizedBox(width: 10),
-          Container(
-            height: 38,
-            width: 2,
-            color: Color(ColorUtils.accentColor),
+        ),
+        SizedBox(width: 10),
+        Container(
+          height: 38,
+          width: 2,
+          color: Color(ColorUtils.accentColor),
+        ),
+        SizedBox(width: 10),
+        Text(
+          'Medicina del lavoro',
+          style: ThemeUtils.subtitle.copyWith(
+            fontSize: SizingUtils.bodyTextL,
           ),
-          SizedBox(width: 10),
-          Text(
-            'Medicina del lavoro',
-            style: ThemeUtils.subtitle.copyWith(
-              fontSize: SizingUtils.bodyTextL,
-            ),
-          ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

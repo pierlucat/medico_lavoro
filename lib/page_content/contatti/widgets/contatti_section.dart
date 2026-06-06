@@ -47,7 +47,7 @@ class IndicazioniSection extends StatelessWidget {
         RigaContatti(
           icon: CupertinoIcons.placemark,
           title: "Indirizzo",
-          subtitle: "Via Magellano, 8, Creazzo (VI)",
+          subtitle: "Via Magellano, 2, Creazzo (VI)",
         ),
         SizedBox(
           height: 40,
